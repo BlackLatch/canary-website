@@ -49,11 +49,23 @@ export default function Kontakte2() {
       <div 
         className={styles['paint-background']}
         style={{
-          transform: `translateY(${scrollY * 0.5}px)`
+          transform: `translateY(${scrollY > 1000 ? (scrollY - 1000) * 0.5 : 0}px)`
         }}
       ></div>
+              <div 
+          className={styles['dark-paint-background']}
+          style={{
+            opacity: scrollY > 3000 ? Math.min(1, (scrollY - 3000) / 500) : 0
+          }}
+        ></div>
       <div className={styles.header}>
-        <div className={styles['header-center']}>
+        <div 
+          className={styles['header-center']}
+          style={{
+            color: scrollY > 3000 ? 'white' : 'black',
+            transition: 'color 0.3s ease'
+          }}
+        >
           <div className={styles['small-text']}>GitHub</div>
           <div className={styles['small-text']}>Docs</div>
           <div className={styles['small-text']}>Demo App</div>
@@ -65,21 +77,16 @@ export default function Kontakte2() {
         </div>
       </div>
       
-      <div 
-        className={styles['typewriter-container']}
-        style={{
-          transform: `translateY(${scrollY * -0.1}px)`
-        }}
-      >
+      <div className={styles['typewriter-container']}>
         <div className={styles['target-circle']}>
-          <div className={styles['circle-dot']} style={{transform: 'rotate(0deg) translateY(-300px)'}}></div>
-          <div className={styles['circle-dot']} style={{transform: 'rotate(45deg) translateY(-300px)'}}></div>
-          <div className={styles['circle-dot']} style={{transform: 'rotate(90deg) translateY(-300px)'}}></div>
-          <div className={styles['circle-dot']} style={{transform: 'rotate(135deg) translateY(-300px)'}}></div>
-          <div className={styles['circle-dot']} style={{transform: 'rotate(180deg) translateY(-300px)'}}></div>
-          <div className={styles['circle-dot']} style={{transform: 'rotate(225deg) translateY(-300px)'}}></div>
-          <div className={styles['circle-dot']} style={{transform: 'rotate(270deg) translateY(-300px)'}}></div>
-          <div className={styles['circle-dot']} style={{transform: 'rotate(315deg) translateY(-300px)'}}></div>
+          <div className={styles['circle-dot']} style={{transform: 'rotate(0deg) translateY(-400px)'}}></div>
+          <div className={styles['circle-dot']} style={{transform: 'rotate(45deg) translateY(-400px)'}}></div>
+          <div className={styles['circle-dot']} style={{transform: 'rotate(90deg) translateY(-400px)'}}></div>
+          <div className={styles['circle-dot']} style={{transform: 'rotate(135deg) translateY(-400px)'}}></div>
+          <div className={styles['circle-dot']} style={{transform: 'rotate(180deg) translateY(-400px)'}}></div>
+          <div className={styles['circle-dot']} style={{transform: 'rotate(225deg) translateY(-400px)'}}></div>
+          <div className={styles['circle-dot']} style={{transform: 'rotate(270deg) translateY(-400px)'}}></div>
+          <div className={styles['circle-dot']} style={{transform: 'rotate(315deg) translateY(-400px)'}}></div>
         </div>
         <div className={styles['typewriter-text']}>
           <span className={styles['typewriter-line']}>
@@ -92,8 +99,15 @@ export default function Kontakte2() {
       <div 
         className={styles['description-container']}
         style={{
-          transform: `translateY(${scrollY * -0.05}px)`,
-          opacity: Math.max(0, 1 - scrollY / 800)
+          opacity: (() => {
+            if (scrollY < 100) return 0; // Hidden initially
+            if (scrollY < 300) return (scrollY - 100) / 200; // Fade in
+            if (scrollY < 2500) return 1; // Fully visible (much longer)
+            if (scrollY < 2700) return 1 - (scrollY - 2500) / 200; // Fade out
+            return 0; // Hidden after fade out
+          })(),
+          top: scrollY > 400 ? `${Math.max(40, 60 - (scrollY - 400) * 0.025)}%` : '60%',
+          transition: 'opacity 0.4s ease-out, top 0.3s ease-out'
         }}
       >
         <p className={styles['description-text']}>
@@ -104,8 +118,15 @@ export default function Kontakte2() {
       <div 
         className={styles['cta-container']}
         style={{
-          transform: `translateY(${scrollY * 0.05}px)`,
-          opacity: Math.max(0, 1 - scrollY / 1000)
+          opacity: (() => {
+            if (scrollY < 200) return 0; // Hidden initially
+            if (scrollY < 400) return (scrollY - 200) / 200; // Fade in
+            if (scrollY < 2600) return 1; // Fully visible (much longer)
+            if (scrollY < 2800) return 1 - (scrollY - 2600) / 200; // Fade out
+            return 0; // Hidden after fade out
+          })(),
+          top: scrollY > 400 ? `${Math.max(55, 76 - (scrollY - 400) * 0.025)}%` : '76%',
+          transition: 'opacity 0.4s ease-out, top 0.3s ease-out'
         }}
       >
         <button className={`${styles['cta-button']} ${styles['cta-primary']}`}>
@@ -117,6 +138,44 @@ export default function Kontakte2() {
         <button className={`${styles['cta-button']} ${styles['cta-tertiary']}`}>
           Join Newsletter
         </button>
+      </div>
+
+              <div 
+          className={styles['feature-section']}
+          style={{
+            opacity: scrollY > 3200 ? Math.min(1, (scrollY - 3200) / 400) : 0,
+            transition: 'opacity 0.6s ease-out'
+          }}
+        >
+        <div className={styles['feature-header']}>
+          <h2 className={styles['feature-title']}>Canary Protection</h2>
+          <p className={styles['feature-description']}>
+            When silence speaks volumes, Canary ensures your most critical information reaches the right people at exactly the right time. Built with military-grade security and automated reliability.
+          </p>
+          <button className={styles['feature-cta']}>EXPLORE</button>
+        </div>
+        
+        <div className={styles['feature-grid']}>
+          <div className={styles['feature-item']}>
+            <div className={styles['feature-icon']}>■</div>
+            <div className={styles['feature-text']}>MILITARY-GRADE ENCRYPTION</div>
+          </div>
+          
+          <div className={styles['feature-item']}>
+            <div className={styles['feature-icon']}>▲</div>
+            <div className={styles['feature-text']}>AUTOMATED DEAD MAN'S SWITCH</div>
+          </div>
+          
+          <div className={styles['feature-item']}>
+            <div className={styles['feature-icon']}>●</div>
+            <div className={styles['feature-text']}>TRUSTED CONTACT DELIVERY</div>
+          </div>
+          
+          <div className={styles['feature-item']}>
+            <div className={styles['feature-icon']}>✓</div>
+            <div className={styles['feature-text']}>ROBUST PRIVACY & SUPPORT</div>
+          </div>
+        </div>
       </div>
 
     </div>

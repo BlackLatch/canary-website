@@ -1,14 +1,55 @@
 .kontakte-container {
   background-color: transparent;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 30px 40px;
-  min-height: 300vh;
+  padding: 180px 40px 30px 40px;
+  min-height: 500vh;
   color: black;
   width: 100%;
   box-sizing: border-box;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.dark-paint-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+  background: 
+    /* Small speckles - dark */
+    radial-gradient(circle 1px at 5% 10%, #666 50%, transparent 50%),
+    radial-gradient(circle 1px at 15% 25%, #777 50%, transparent 50%),
+    radial-gradient(circle 1px at 35% 45%, #888 50%, transparent 50%),
+    radial-gradient(circle 1px at 55% 15%, #555 50%, transparent 50%),
+    radial-gradient(circle 1px at 75% 35%, #666 50%, transparent 50%),
+    radial-gradient(circle 1px at 85% 65%, #777 50%, transparent 50%),
+    radial-gradient(circle 1px at 25% 75%, #888 50%, transparent 50%),
+    radial-gradient(circle 1px at 45% 85%, #555 50%, transparent 50%),
+    radial-gradient(circle 1px at 65% 55%, #666 50%, transparent 50%),
+    radial-gradient(circle 1px at 95% 85%, #777 50%, transparent 50%),
+    /* Medium spots - dark */
+    radial-gradient(circle 3px at 12% 40%, rgba(135, 135, 135, 0.4) 50%, transparent 50%),
+    radial-gradient(circle 2px at 28% 20%, rgba(155, 155, 155, 0.3) 50%, transparent 50%),
+    radial-gradient(circle 4px at 60% 70%, rgba(165, 165, 165, 0.35) 50%, transparent 50%),
+    radial-gradient(circle 2px at 80% 40%, rgba(145, 145, 145, 0.3) 50%, transparent 50%),
+    radial-gradient(circle 3px at 40% 60%, rgba(170, 170, 170, 0.4) 50%, transparent 50%),
+    /* Larger texture areas - dark */
+    radial-gradient(ellipse 150px 100px at 20% 30%, rgba(125, 125, 125, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 200px 150px at 80% 70%, rgba(140, 140, 140, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 180px 120px at 50% 80%, rgba(130, 130, 130, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 160px 200px at 10% 60%, rgba(150, 150, 150, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 140px 180px at 90% 20%, rgba(160, 160, 160, 0.16) 0%, transparent 58%);
+  background-color: #1a1a1a;
+  background-size: 
+    100px 100px, 120px 120px, 80px 80px, 150px 150px, 110px 110px,
+    90px 90px, 130px 130px, 70px 70px, 140px 140px, 160px 160px,
+    200px 200px, 180px 180px, 220px 220px, 170px 170px, 190px 190px,
+    100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
 }
 
 .paint-background {
@@ -19,35 +60,22 @@
   height: 100%;
   z-index: -2;
   background: 
-    /* Small speckles */
-    radial-gradient(circle 1px at 5% 10%, #999 50%, transparent 50%),
-    radial-gradient(circle 1px at 15% 25%, #888 50%, transparent 50%),
-    radial-gradient(circle 1px at 35% 45%, #777 50%, transparent 50%),
-    radial-gradient(circle 1px at 55% 15%, #aaa 50%, transparent 50%),
-    radial-gradient(circle 1px at 75% 35%, #999 50%, transparent 50%),
-    radial-gradient(circle 1px at 85% 65%, #888 50%, transparent 50%),
-    radial-gradient(circle 1px at 25% 75%, #777 50%, transparent 50%),
-    radial-gradient(circle 1px at 45% 85%, #aaa 50%, transparent 50%),
-    radial-gradient(circle 1px at 65% 55%, #999 50%, transparent 50%),
-    radial-gradient(circle 1px at 95% 85%, #888 50%, transparent 50%),
-    /* Medium spots */
-    radial-gradient(circle 3px at 12% 40%, rgba(120, 120, 120, 0.4) 50%, transparent 50%),
-    radial-gradient(circle 2px at 28% 20%, rgba(100, 100, 100, 0.3) 50%, transparent 50%),
-    radial-gradient(circle 4px at 60% 70%, rgba(90, 90, 90, 0.35) 50%, transparent 50%),
-    radial-gradient(circle 2px at 80% 40%, rgba(110, 110, 110, 0.3) 50%, transparent 50%),
-    radial-gradient(circle 3px at 40% 60%, rgba(85, 85, 85, 0.4) 50%, transparent 50%),
-    /* Larger texture areas */
-    radial-gradient(ellipse 150px 100px at 20% 30%, rgba(130, 130, 130, 0.2) 0%, transparent 60%),
-    radial-gradient(ellipse 200px 150px at 80% 70%, rgba(115, 115, 115, 0.15) 0%, transparent 55%),
-    radial-gradient(ellipse 180px 120px at 50% 80%, rgba(125, 125, 125, 0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 160px 200px at 10% 60%, rgba(105, 105, 105, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 140px 180px at 90% 20%, rgba(95, 95, 95, 0.16) 0%, transparent 58%);
-  background-color: #d8d8d8;
+    /* Subtle grid pattern */
+    linear-gradient(rgba(0,0,0,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.02) 1px, transparent 1px),
+    /* Fine texture */
+    radial-gradient(circle 0.5px at 15% 25%, #bbb 50%, transparent 50%),
+    radial-gradient(circle 0.5px at 35% 65%, #aaa 50%, transparent 50%),
+    radial-gradient(circle 0.5px at 75% 15%, #ccc 50%, transparent 50%),
+    radial-gradient(circle 0.5px at 85% 85%, #bbb 50%, transparent 50%),
+    /* Larger subtle areas */
+    radial-gradient(ellipse 200px 150px at 20% 30%, rgba(0, 0, 0, 0.02) 0%, transparent 70%),
+    radial-gradient(ellipse 180px 200px at 80% 70%, rgba(0, 0, 0, 0.015) 0%, transparent 65%);
+  background-color: #f8f8f8;
   background-size: 
-    100px 100px, 120px 120px, 80px 80px, 150px 150px, 110px 110px,
-    90px 90px, 130px 130px, 70px 70px, 140px 140px, 160px 160px,
-    200px 200px, 180px 180px, 220px 220px, 170px 170px, 190px 190px,
-    100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    40px 40px, 40px 40px,
+    120px 120px, 140px 140px, 160px 160px, 180px 180px,
+    100% 100%, 100% 100%;
 }
 
 
@@ -56,10 +84,14 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   align-items: flex-start;
   width: 100%;
-  z-index: 5;
+  z-index: 100;
+  padding: 30px 40px;
 }
 
 .header-center {
@@ -95,9 +127,11 @@
 
 .small-text {
   margin-bottom: 1px;
-  font-size: 14px;
-  font-weight: normal;
+  font-size: 13px;
+  font-weight: 400;
   line-height: 1.3;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .spacing {
@@ -106,8 +140,8 @@
 
 .typewriter-container {
   position: relative;
-  margin-top: 20vh;
-  margin-bottom: 15vh;
+  margin-top: 32.5vh;
+  margin-bottom: 80vh;
   z-index: 10;
   width: 100%;
   display: flex;
@@ -119,9 +153,9 @@
 
 .target-circle {
   position: absolute;
-  width: 600px;
-  height: 600px;
-  border: 1px solid #000;
+  width: 800px;
+  height: 800px;
+  border: 1px solid rgb(151, 151, 151);
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -161,46 +195,50 @@
 }
 
 .typewriter-line {
-  font-family: 'Courier New', monospace;
-  font-size: 48px;
-  font-weight: bold;
-  color: #000;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 64px;
+  font-weight: 400;
+  color: #2a2a2a;
   white-space: nowrap;
+  letter-spacing: -0.5px;
 }
 
 .cursor {
   font-family: 'Courier New', monospace;
-  font-size: 48px;
+  font-size: 64px;
   font-weight: bold;
   color: #000;
   margin-left: 2px;
 }
 
 .description-container {
-  position: relative;
-  margin: 0 auto 20vh auto;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 20;
   width: 100%;
-  max-width: 600px;
+  max-width: 1400px;
   padding: 0 20px;
   text-align: center;
   opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
 .description-text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
   color: #333;
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;
+  letter-spacing: 0.2px;
 }
 
 .cta-container {
-  position: relative;
-  margin: 0 auto 30vh auto;
+  position: fixed;
+  top: 76%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 20;
   display: flex;
   gap: 20px;
@@ -211,17 +249,14 @@
   max-width: 800px;
   padding: 0 20px;
   opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 1s ease-out 1s forwards;
 }
 
 .cta-button {
   padding: 14px 28px;
   border: none;
-  border-radius: 8px;
+  border-radius: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -231,22 +266,22 @@
 }
 
 .cta-primary {
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #000;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid rgb(151, 151, 151);
 }
 
 .cta-primary:hover {
-  background-color: #333;
-  border-color: #333;
+  background-color: #000;
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cta-secondary {
   background-color: transparent;
   color: #000;
-  border: 2px solid #000;
+  border: 1px solid rgb(151, 151, 151);
 }
 
 .cta-secondary:hover {
@@ -257,16 +292,16 @@
 }
 
 .cta-tertiary {
-  background-color: #f5f5f5;
-  color: #333;
-  border: 2px solid #ddd;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid rgb(151, 151, 151);
 }
 
 .cta-tertiary:hover {
-  background-color: #e0e0e0;
-  border-color: #999;
+  background-color: #000;
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .notation-row {
@@ -403,4 +438,114 @@
     opacity: 0.3;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+@keyframes fadeInUpHero {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 50px));
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.feature-section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 60px;
+  opacity: 0;
+}
+
+.feature-header {
+  margin-bottom: 80px;
+  text-align: left;
+}
+
+.feature-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 32px 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.feature-description {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+  margin: 0 0 48px 0;
+  font-weight: 400;
+  max-width: 800px;
+}
+
+.feature-cta {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 0;
+  padding: 16px 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feature-cta:hover {
+  background-color: rgba(151, 151, 151, 0.1);
+  border-color: #fff;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 80px;
+  border-top: 1px solid rgb(151, 151, 151);
+  padding-top: 48px;
+  position: relative;
+}
+
+.feature-grid::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 60px;
+  height: 1px;
+  background-color: rgb(151, 151, 151);
+  transform: skew(-45deg);
+  transform-origin: left center;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.feature-icon {
+  font-size: 24px;
+  color: #f5f5f5;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ccc;
+  letter-spacing: 1px;
+  line-height: 1.4;
 } 
