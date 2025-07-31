@@ -6,8 +6,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  assetPrefix: '.',
-  basePath: '',
+  // Only use assetPrefix in production
+  ...(process.env.NODE_ENV === 'production' && {
+    assetPrefix: '.',
+    basePath: '',
+  }),
 }
 
 export default nextConfig
