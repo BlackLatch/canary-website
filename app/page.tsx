@@ -1,5 +1,6 @@
 'use client'
 import styles from './globals.module.css'
+import responsive from './responsive.module.css'
 import { useEffect, useState, useRef } from 'react'
 import Script from 'next/script'
 
@@ -304,18 +305,18 @@ export default function Kontakte2() {
           <div className={styles['newsletter-embed']}>
             <iframe 
               src="https://subscribe-forms.beehiiv.com/f355e04c-26d6-402f-9113-7e45e0b0faca" 
-              className={styles['beehiiv-embed']} 
+              className={`${styles['beehiiv-embed']} ${responsive['beehiiv-embed']}`} 
               data-test-id="beehiiv-embed" 
               frameBorder="0" 
               scrolling="no" 
               style={{
-                width: '561px', 
+                width: '100%', 
                 height: '280px', 
                 margin: '0', 
                 borderRadius: '0px', 
                 backgroundColor: 'transparent', 
                 boxShadow: '0 0 #0000', 
-                maxWidth: '100%'
+                maxWidth: '561px'
               }}
             />
           </div>

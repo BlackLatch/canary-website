@@ -1,0 +1,219 @@
+/* Responsive Styles - Preserves original design while adding responsiveness */
+
+/* Medium screens (tablets, 768px to 1199px) */
+@media screen and (max-width: 1199px) {
+  .kontakte-container {
+    padding: 150px 30px 30px 30px;
+  }
+
+  .header {
+    padding: 25px 30px;
+  }
+
+  .header-center {
+    transform: scale(1.5);
+    flex: 0 0 240px;
+  }
+
+  .title {
+    right: 30px;
+  }
+
+  .logo {
+    height: 100px;
+  }
+
+  .typewriter-line {
+    font-size: 48px;
+  }
+
+  .typewriter-container {
+    padding-top: 20vh;
+  }
+
+  .hero-content-container {
+    padding: 0 30px 25px 30px;
+    max-width: 500px;
+  }
+
+  .description-text {
+    font-size: 16px;
+  }
+
+  .white-slide-content {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .content-left, .content-right {
+    width: 100%;
+  }
+
+  .newsletter-embed {
+    max-width: 100%;
+  }
+}
+
+/* Small screens (mobile devices, 767px and below) */
+@media screen and (max-width: 767px) {
+  .kontakte-container {
+    padding: 120px 20px 20px 20px;
+  }
+
+  .header {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .header-center {
+    transform: scale(1);
+    margin-top: 15px;
+    padding: 0;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .small-text {
+    margin-bottom: 8px;
+  }
+
+  .title {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  .typewriter-container {
+    justify-content: center;
+    padding-right: 0;
+    padding-top: 15vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  .typewriter-text {
+    text-align: center;
+  }
+
+  .typewriter-line {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .hero-content-container {
+    position: relative;
+    padding: 50px 20px 20px 20px;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    bottom: auto;
+    right: auto;
+  }
+
+  .description-container {
+    text-align: center;
+  }
+
+  .description-text {
+    font-size: 16px;
+  }
+
+  .cta-container {
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  /* Feature and About sections */
+  .feature-section {
+    padding: 40px 20px;
+  }
+
+  .feature-title {
+    font-size: 36px;
+  }
+
+  .feature-description {
+    font-size: 16px;
+  }
+
+  .white-slide {
+    padding: 40px 20px;
+  }
+
+  .white-slide-title {
+    font-size: 28px;
+  }
+
+  .white-slide-description {
+    font-size: 16px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industrial-steps {
+    gap: 20px;
+  }
+
+  /* Newsletter section */
+  .newsletter-section {
+    padding: 40px 20px;
+  }
+
+  .newsletter-container {
+    padding: 30px 15px;
+  }
+
+  .newsletter-title {
+    font-size: 36px;
+  }
+
+  .newsletter-description {
+    font-size: 16px;
+  }
+
+  .beehiiv-embed {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Extra small screens (<480px) */
+@media screen and (max-width: 479px) {
+  .header-center {
+    transform: scale(0.9);
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .typewriter-line {
+    font-size: 28px;
+  }
+
+  .description-text {
+    font-size: 14px;
+  }
+
+  .feature-title, .white-slide-title, .newsletter-title {
+    font-size: 28px;
+  }
+}
