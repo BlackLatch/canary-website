@@ -3,8 +3,12 @@ import styles from './globals.module.css'
 import responsive from './responsive.module.css'
 import { useEffect, useState, useRef } from 'react'
 import Script from 'next/script'
+import { useIsMobile } from './hooks/useIsMobile'
+import MobileVersion from './MobileVersion'
 
 export default function Kontakte2() {
+  const isMobile = useIsMobile(768)
+  const [isClient, setIsClient] = useState(false)
   const [displayedText, setDisplayedText] = useState('')
   const [showCursor, setShowCursor] = useState(true)
   const [scrollY, setScrollY] = useState(0)
@@ -35,22 +39,28 @@ export default function Kontakte2() {
   };
   
   useEffect(() => {
-    const timer = setTimeout(() => {
-      let index = 0
-      const typeInterval = setInterval(() => {
-        if (index <= fullText.length) {
-          setDisplayedText(fullText.slice(0, index))
-          index++
-        } else {
-          clearInterval(typeInterval)
-        }
-      }, 80)
-      
-      return () => clearInterval(typeInterval)
-    }, 500)
-    
-    return () => clearTimeout(timer)
+    setIsClient(true)
   }, [])
+
+  useEffect(() => {
+    if (!isMobile && isClient) {
+      const timer = setTimeout(() => {
+        let index = 0
+        const typeInterval = setInterval(() => {
+          if (index <= fullText.length) {
+            setDisplayedText(fullText.slice(0, index))
+            index++
+          } else {
+            clearInterval(typeInterval)
+          }
+        }, 80)
+        
+        return () => clearInterval(typeInterval)
+      }, 500)
+      
+      return () => clearTimeout(timer)
+    }
+  }, [isMobile, isClient])
   
   useEffect(() => {
     const cursorInterval = setInterval(() => {
@@ -88,6 +98,19 @@ export default function Kontakte2() {
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
+
+  if (!isClient) {
+    return null
+  }
+
+  if (isMobile) {
+    return (
+      <>
+        <MobileVersion />
+        <Script async src="https://subscribe-forms.beehiiv.com/embed.js" />
+      </>
+    )
+  }
 
   return (
     <div className={styles['kontakte-container']} ref={containerRef}>

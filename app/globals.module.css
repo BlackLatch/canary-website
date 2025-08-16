@@ -11,6 +11,13 @@
   overflow-y: auto;
 }
 
+/* Hide desktop content on mobile initially */
+@media (max-width: 768px) {
+  .kontakte-container {
+    display: none !important;
+  }
+}
+
 .dark-paint-background {
   position: fixed;
   top: 0;
@@ -326,14 +333,14 @@
 .cta-container {
   display: flex;
   gap: 20px;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
 }
 
 .cta-button {
-  padding: 16px 32px;
+  padding: 16px 24px;
   border: none;
   border-radius: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -344,8 +351,10 @@
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  min-width: 140px;
+  min-width: 130px;
   text-align: center;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .cta-primary {
