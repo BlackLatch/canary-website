@@ -203,6 +203,8 @@ export default function MobileVersion() {
         <img src="/w3pn.png" alt="W3PN" className={styles.mobileSponsorLogo} />
       </section>
 
+      <div className={styles.sectionBlend}></div>
+
       <section id="features" className={`${styles.mobileSection} ${styles.mobileFeaturesSection}`}>
         <h2 className={styles.mobileSectionTitle}>
           At its core, Canary is a dead man's switch
