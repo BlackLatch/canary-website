@@ -1,0 +1,12 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield outline -->
+  <path d="M12 3L5 6V11C5 15.55 7.84 19.74 12 21C16.16 19.74 19 15.55 19 11V6L12 3Z" stroke="black" stroke-width="1" fill="none"/>
+  
+  <!-- Diagonal line through shield -->
+  <path d="M8 8L16 16" stroke="black" stroke-width="1" stroke-linecap="round"/>
+  
+  <!-- Small accent marks -->
+  <path d="M10 10L11 11" stroke="black" stroke-width="0.8" stroke-linecap="round"/>
+  <path d="M13 13L14 14" stroke="black" stroke-width="0.8" stroke-linecap="round"/>
+</svg>
+

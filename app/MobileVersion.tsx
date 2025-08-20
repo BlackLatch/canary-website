@@ -8,42 +8,11 @@ export default function MobileVersion() {
   const [showCursor, setShowCursor] = useState(false)
   const [isAnimationComplete, setIsAnimationComplete] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [email, setEmail] = useState('')
-  const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const fullText = 'If you go silent, Canary speaks for you.'
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
   const closeMenu = () => setMenuOpen(false)
 
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
-    
-    setSubscribeStatus('loading')
-    
-    // Simulate API call - replace with actual Beehiiv API endpoint
-    try {
-      // You'll need to replace this with your actual Beehiiv subscription endpoint
-      const response = await fetch('https://api.beehiiv.com/v1/publications/YOUR_PUBLICATION_ID/subscriptions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email })
-      })
-      
-      if (response.ok) {
-        setSubscribeStatus('success')
-        setEmail('')
-      } else {
-        setSubscribeStatus('error')
-      }
-    } catch (error) {
-      setSubscribeStatus('error')
-    }
-    
-    setTimeout(() => setSubscribeStatus('idle'), 3000)
-  }
 
   useEffect(() => {
     setIsLoaded(true)
@@ -214,19 +183,19 @@ export default function MobileVersion() {
         
         <div className={styles.mobileFeatureGrid}>
           <div className={styles.mobileFeatureItem}>
-            <div className={styles.mobileFeatureIcon}>■</div>
+            <img src="/end_to_end_encryption_icon.svg" alt="" className={styles.mobileFeatureIcon} />
             <div className={styles.mobileFeatureText}>End-to-End Encryption</div>
           </div>
           <div className={styles.mobileFeatureItem}>
-            <div className={styles.mobileFeatureIcon}>▲</div>
+            <img src="/censorship_resistant_icon.svg" alt="" className={styles.mobileFeatureIcon} />
             <div className={styles.mobileFeatureText}>Censorship Resistant</div>
           </div>
           <div className={styles.mobileFeatureItem}>
-            <div className={styles.mobileFeatureIcon}>●</div>
+            <img src="/decentralised_icon.svg" alt="" className={styles.mobileFeatureIcon} />
             <div className={styles.mobileFeatureText}>Decentralized</div>
           </div>
           <div className={styles.mobileFeatureItem}>
-            <div className={styles.mobileFeatureIcon}>✓</div>
+            <img src="/trust_minimized_icon.svg" alt="" className={styles.mobileFeatureIcon} />
             <div className={styles.mobileFeatureText}>Trust Minimized</div>
           </div>
         </div>
@@ -277,7 +246,12 @@ export default function MobileVersion() {
       </section>
 
       <section id="about" className={`${styles.mobileSection} ${styles.mobileAboutSection}`}>
-        <h2 className={styles.mobileSectionTitle}>Origin Story</h2>
+        <h2 className={styles.mobileOriginStoryTitle}>
+          Read about our<br />
+          <a href="https://capsules.thirdroom.studio/1/" target="_blank" rel="noopener noreferrer" className={styles.originStoryLink}>
+            origin story
+          </a>
+        </h2>
         <div className={styles.mobileSectionContent}>
           <p>
             Canary originated as a winning hackathon project at the Web3 Privacy Now Hack in Berlin.
@@ -288,41 +262,33 @@ export default function MobileVersion() {
             an MVP of the app.
           </p>
         </div>
-        <img src="/w3pn.png" alt="W3PN" className={styles.mobileSponsorLogo} />
+        <div className={styles.mobileSponsorContainer}>
+          <img src="/w3pn.png" alt="W3PN" className={styles.mobileSponsorLogo} />
+          <img src="/taco.svg" alt="Taco" className={styles.mobileSponsorLogo} />
+        </div>
       </section>
 
       <section id="newsletter" className={styles.mobileNewsletter}>
         <h2 className={styles.mobileNewsletterTitle}>Stay Updated</h2>
         <p className={styles.mobileNewsletterDescription}>
-          Get the latest updates on Canary's development and security insights.
+          Get the latest updates on Canary's development.
         </p>
-        <form className={styles.mobileSubscribeForm} onSubmit={handleSubscribe}>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={styles.mobileEmailInput}
-            required
-            disabled={subscribeStatus === 'loading'}
+        <div className={styles.mobileSubscribeEmbed}>
+          <iframe 
+            src="https://canaryapp.substack.com/embed" 
+            width="480" 
+            height="150" 
+            style={{
+              border: '1px solid #EEE', 
+              background: 'black', 
+              borderRadius: '8px',
+              maxWidth: '100%',
+              width: '100%'
+            }} 
+            frameBorder="0" 
+            scrolling="no"
           />
-          <button 
-            type="submit" 
-            className={styles.mobileSubscribeButton}
-            disabled={subscribeStatus === 'loading'}
-          >
-            {subscribeStatus === 'loading' ? 'Subscribing...' : 
-             subscribeStatus === 'success' ? 'Subscribed!' :
-             subscribeStatus === 'error' ? 'Try Again' :
-             'Subscribe'}
-          </button>
-        </form>
-        {subscribeStatus === 'success' && (
-          <p className={styles.mobileSubscribeMessage}>Thank you for subscribing!</p>
-        )}
-        {subscribeStatus === 'error' && (
-          <p className={styles.mobileSubscribeMessage}>Something went wrong. Please try again.</p>
-        )}
+        </div>
       </section>
     </div>
   )

@@ -107,7 +107,6 @@ export default function Kontakte2() {
     return (
       <>
         <MobileVersion />
-        <Script async src="https://subscribe-forms.beehiiv.com/embed.js" />
       </>
     )
   }
@@ -214,8 +213,9 @@ export default function Kontakte2() {
           <p className={styles['feature-description']}>
             Canary was accepted as the first project in the Cypherpunk Launchpad program, a 3-month incubation program for early-stage privacy projects. We are now building an MVP of the app.
           </p>
-          <div className={styles['centered-logo']}>
+          <div className={styles['sponsor-container']}>
             <img src="/w3pn.png" alt="W3PN Sponsor" className={styles['inline-logo']} />
+            <img src="/taco.svg" alt="Taco" className={styles['inline-logo']} />
           </div>
         </div>
       </div>
@@ -252,22 +252,22 @@ export default function Kontakte2() {
             
             <div className={styles['feature-grid']}>
               <div className={styles['feature-item']}>
-                <div className={styles['feature-icon']}>■</div>
+                <img src="/end_to_end_encryption_icon.svg" alt="" className={styles['feature-icon']} />
                 <div className={styles['feature-text']}>END-TO-END ENCRYPTION</div>
               </div>
               
               <div className={styles['feature-item']}>
-                <div className={styles['feature-icon']}>▲</div>
-                <div className={styles['feature-text']}>AUTOMATED CHECK-INS</div>
+                <img src="/censorship_resistant_icon.svg" alt="" className={styles['feature-icon']} />
+                <div className={styles['feature-text']}>CENSORSHIP RESISTANT</div>
               </div>
               
               <div className={styles['feature-item']}>
-                <div className={styles['feature-icon']}>●</div>
-                <div className={styles['feature-text']}>TRUSTED CONTACT NETWORK</div>
+                <img src="/decentralised_icon.svg" alt="" className={styles['feature-icon']} />
+                <div className={styles['feature-text']}>DECENTRALIZED</div>
               </div>
               
               <div className={styles['feature-item']}>
-                <div className={styles['feature-icon']}>✓</div>
+                <img src="/trust_minimized_icon.svg" alt="" className={styles['feature-icon']} />
                 <div className={styles['feature-text']}>TRUST MINIMIZED</div>
               </div>
             </div>
@@ -346,24 +346,22 @@ export default function Kontakte2() {
         <div className={styles['newsletter-container']}>
           <h2 className={styles['newsletter-title']}>Stay Updated</h2>
           <p className={styles['newsletter-description']}>
-            Get the latest updates on Canary's development and security insights.
+            Get the latest updates on Canary's development.
           </p>
           <div className={styles['newsletter-embed']}>
             <iframe 
-              src="https://subscribe-forms.beehiiv.com/f355e04c-26d6-402f-9113-7e45e0b0faca" 
-              className={`${styles['beehiiv-embed']} ${responsive['beehiiv-embed']}`} 
-              data-test-id="beehiiv-embed" 
-              frameBorder="0" 
-              scrolling="no" 
+              src="https://canaryapp.substack.com/embed" 
+              width="480" 
+              height="280" 
               style={{
-                width: '100%', 
-                height: '280px', 
-                margin: '0', 
-                borderRadius: '0px', 
-                backgroundColor: 'transparent', 
-                boxShadow: '0 0 #0000', 
-                maxWidth: '561px'
-              }}
+                border: '1px solid #EEE', 
+                background: 'white', 
+                borderRadius: '8px',
+                maxWidth: '100%',
+                width: '100%'
+              }} 
+              frameBorder="0" 
+              scrolling="no"
             />
           </div>
         </div>
@@ -372,7 +370,6 @@ export default function Kontakte2() {
       {/* Add extra height to ensure scrolling space */}
       <div style={{ height: '8000px' }}></div>
 
-      <Script async src="https://subscribe-forms.beehiiv.com/embed.js" />
 
     </div>
   )

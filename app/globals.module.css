@@ -756,10 +756,11 @@
 }
 
 .feature-icon {
-  font-size: 20px;
-  color: #333333;
+  width: 24px;
+  height: 24px;
   opacity: 0.8;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .feature-text {
@@ -798,6 +799,29 @@
 }
 
 .sponsor-logo:hover {
+  opacity: 1;
+}
+
+.inline-logo[src="/taco.svg"] {
+  filter: invert(1);
+}
+
+.sponsor-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  margin: 40px 0;
+}
+
+.sponsor-container .inline-logo {
+  height: 50px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.sponsor-container .inline-logo:hover {
   opacity: 1;
 }
 
