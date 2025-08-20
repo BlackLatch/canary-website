@@ -161,9 +161,10 @@ export default function MobileVersion() {
       </section>
 
       <div className={styles.mobileContentSection}>
-        <p className={styles.mobileTagline}>
-          A digital failsafe for critical information
-        </p>
+        <h2 className={styles.mobileTaglineHeader}>
+          <span className={styles.digitalFailsafeEmphasis}>A digital failsafe</span><br />
+          for critical information
+        </h2>
         <p className={styles.mobileDescription}>
           Think of it like a safe for your most critical stories, truths, or instructions. 
           If you can't personally unlock it — if you're detained, missing, or unable — Canary 
@@ -199,7 +200,10 @@ export default function MobileVersion() {
 
       <section id="features" className={`${styles.mobileSection} ${styles.mobileFeaturesSection}`}>
         <h2 className={styles.mobileSectionTitle}>
-          At its core, Canary is a dead man's switch
+          At its core, Canary is a<br />
+          <a href="https://en.wikipedia.org/wiki/Dead_man%27s_switch" target="_blank" rel="noopener noreferrer" className={styles.deadMansSwitchLink}>
+            dead man's switch
+          </a>
         </h2>
         <div className={styles.mobileSectionContent}>
           <p>
@@ -215,11 +219,11 @@ export default function MobileVersion() {
           </div>
           <div className={styles.mobileFeatureItem}>
             <div className={styles.mobileFeatureIcon}>▲</div>
-            <div className={styles.mobileFeatureText}>Automated Check-ins</div>
+            <div className={styles.mobileFeatureText}>Censorship Resistant</div>
           </div>
           <div className={styles.mobileFeatureItem}>
             <div className={styles.mobileFeatureIcon}>●</div>
-            <div className={styles.mobileFeatureText}>Trusted Contact Network</div>
+            <div className={styles.mobileFeatureText}>Decentralized</div>
           </div>
           <div className={styles.mobileFeatureItem}>
             <div className={styles.mobileFeatureIcon}>✓</div>
