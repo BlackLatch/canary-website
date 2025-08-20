@@ -133,7 +133,7 @@
 }
 
 .logo {
-  height: 120px;
+  height: 160px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -189,8 +189,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  padding-right: 40px;
-  padding-top: 25vh;
+  padding-right: 60px;
+  padding-top: 30vh;
   opacity: 0;
   transform: translateY(50px);
   animation: fadeInUp 1s ease-out forwards;
@@ -281,14 +281,14 @@
 }
 
 .typewriter-line {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 56px;
-  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 600;
   color: #000;
   white-space: nowrap;
-  letter-spacing: -1px;
+  letter-spacing: -0.03em;
   text-transform: capitalize;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .typewriter-line span {
@@ -309,44 +309,46 @@
   right: 0;
   z-index: 10;
   width: auto;
-  max-width: 600px;
-  padding: 0 40px 30px 40px;
+  max-width: 550px;
+  padding: 0 60px 50px 40px;
   text-align: right;
   transform: translateY(0);
 }
 
 .description-container {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-align: right;
 }
 
 .description-text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #333;
   margin: 0;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0.01em;
+  max-width: 500px;
+  margin-left: auto;
 }
 
 .cta-container {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 12px;
+  justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
   width: 100%;
 }
 
 .cta-button {
-  padding: 16px 24px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -727,10 +729,12 @@
 .feature-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px 80px;
+  gap: 24px 60px;
   border-top: 1px solid rgb(151, 151, 151);
-  padding-top: 48px;
+  padding-top: 32px;
   position: relative;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .feature-grid::after {
@@ -748,23 +752,24 @@
 .feature-item {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .feature-icon {
-  font-size: 24px;
-  color: #f5f5f5;
+  font-size: 20px;
+  color: #333333;
   opacity: 0.8;
   flex-shrink: 0;
 }
 
 .feature-text {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ccc;
-  letter-spacing: 1px;
-  line-height: 1.4;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333333;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 
 /* Sponsor Section */
@@ -808,26 +813,50 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.white-slide::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(229, 62, 62, 0.03) 0%, transparent 70%);
+  animation: floatBlob 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes floatBlob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
 }
 
 .white-slide-content {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
   padding: 0 40px;
   width: 100%;
-  gap: 60px;
 }
 
 .content-left {
   flex: 1;
-  text-align: left;
+  text-align: center;
+  max-width: 800px;
 }
 
 .content-right {
-  flex: 1;
-  text-align: right;
+  display: none;
 }
 
 .how-it-works-title {
@@ -843,22 +872,22 @@
 
 .white-slide-title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 400;
   color: #000000;
-  margin: 0 0 32px 0;
+  margin: 0 0 24px 0;
   line-height: 1.1;
   letter-spacing: -1px;
 }
 
 .white-slide-description {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
   color: #333333;
-  margin: 0 0 40px 0;
+  margin: 0 0 32px 0;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .white-slide .flow-icon {
@@ -1046,6 +1075,99 @@
 .white-slide-cta {
   display: flex;
   justify-content: center;
+}
+
+/* How It Works Slide */
+.how-it-works-slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-it-works-content {
+  max-width: 900px;
+  padding: 0 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.how-it-works-main-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  color: #000;
+  margin: 0 0 60px 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.industrial-steps-centered {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px auto;
+  width: 100%;
+  align-items: center;
+  max-width: 600px;
+}
+
+.industrial-steps-centered .step-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  position: relative;
+  height: 60px;
+}
+
+.industrial-steps-centered .step-marker {
+  width: 60px;
+  height: 60px;
+  background: #333333;
+  color: white;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.industrial-steps-centered .step-content {
+  text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.industrial-steps-centered .step-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.industrial-steps-centered .step-detail {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #666666;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 
 /* Newsletter Section */

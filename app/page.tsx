@@ -168,13 +168,13 @@ export default function Kontakte2() {
         className={styles['hero-content-container']}
         style={{
           opacity: 1, // Always visible from start
-          transform: scrollY > 1000 ? `translateY(${Math.max(-20, (scrollY - 1000) * 0.1)}px)` : 'translateY(0)',
+          transform: scrollY > 500 ? `translateY(${Math.min(-300, (scrollY - 500) * -0.3)}px)` : 'translateY(0)',
           transition: 'opacity 0.4s ease-out, transform 0.3s ease-out'
         }}
       >
         <div className={styles['description-container']}>
           <p className={styles['description-text']}>
-            Think of it like a safe for your most critical stories, truths, or instructions. If you can't personally unlock it—if you're detained, missing, or unable—Canary shares access to a predetermined party automatically.
+            A digital failsafe for critical information. Think of it like a safe for your most critical stories, truths, or instructions. If you can't personally unlock it — if you're detained, missing, or unable — Canary shares access to a predetermined party automatically. Built for journalists, activists, and anyone who needs to ensure their voice is heard.
           </p>
         </div>
 
@@ -235,7 +235,15 @@ export default function Kontakte2() {
           transition: 'opacity 0.6s ease-out'
         }}
       >
-        <div className={styles['white-slide-content']}>
+        <div 
+          className={styles['white-slide-content']}
+          style={{
+            transform: scrollY > 4800 && scrollY < 6200 
+              ? `translateY(${(scrollY - 5000) * 0.15}px) scale(${1 + Math.max(0, (scrollY - 5000) * 0.0001)})`
+              : 'translateY(0) scale(1)',
+            transition: 'transform 0.1s ease-out'
+          }}
+        >
           <div className={styles['content-left']}>
             <h2 className={styles['white-slide-title']}>At it's core, Canary is a dead man's switch (<a href="#" className={styles['link']}>link</a>)</h2>
             <p className={styles['white-slide-description']}>
@@ -264,44 +272,59 @@ export default function Kontakte2() {
               </div>
             </div>
           </div>
-          
-          <div className={styles['content-right']}>
-            <h2 className={styles['how-it-works-title']}>How it works</h2>
-            <div className={styles['industrial-steps']}>
-              <div className={styles['step-item']}>
-                <div className={styles['step-marker']}>01</div>
-                <div className={styles['step-content']}>
-                  <div className={styles['step-label']}>ENCRYPT FILES</div>
-                  <div className={styles['step-detail']}>Automatic encryption on upload</div>
-                </div>
+        </div>
+      </div>
+
+      {/* How It Works Slide */}
+      <div 
+        className={styles['how-it-works-slide']}
+        style={{
+          opacity: (() => {
+            if (scrollY < 5500) return 0;
+            if (scrollY < 6000) return Math.min(1, (scrollY - 5500) / 500);
+            if (scrollY < 6500) return 1;
+            if (scrollY < 7000) return Math.max(0, 1 - (scrollY - 6500) / 500);
+            return 0;
+          })(),
+          transition: 'opacity 0.6s ease-out'
+        }}
+      >
+        <div className={styles['how-it-works-content']}>
+          <h2 className={styles['how-it-works-main-title']}>How it works</h2>
+          <div className={styles['industrial-steps-centered']}>
+            <div className={styles['step-item']}>
+              <div className={styles['step-marker']}>01</div>
+              <div className={styles['step-content']}>
+                <div className={styles['step-label']}>ENCRYPT FILES</div>
+                <div className={styles['step-detail']}>Automatic encryption on upload</div>
               </div>
-              <div className={styles['step-item']}>
-                <div className={styles['step-marker']}>02</div>
-                <div className={styles['step-content']}>
-                  <div className={styles['step-label']}>UPLOAD MESSAGE</div>
-                  <div className={styles['step-detail']}>Share critical information securely</div>
-                </div>
+            </div>
+            <div className={styles['step-item']}>
+              <div className={styles['step-marker']}>02</div>
+              <div className={styles['step-content']}>
+                <div className={styles['step-label']}>UPLOAD MESSAGE</div>
+                <div className={styles['step-detail']}>Share critical information securely</div>
               </div>
-              <div className={styles['step-item']}>
-                <div className={styles['step-marker']}>03</div>
-                <div className={styles['step-content']}>
-                  <div className={styles['step-label']}>SET CHECK-IN SCHEDULE</div>
-                  <div className={styles['step-detail']}>Define safety confirmation intervals</div>
-                </div>
+            </div>
+            <div className={styles['step-item']}>
+              <div className={styles['step-marker']}>03</div>
+              <div className={styles['step-content']}>
+                <div className={styles['step-label']}>SET CHECK-IN SCHEDULE</div>
+                <div className={styles['step-detail']}>Define safety confirmation intervals</div>
               </div>
-              <div className={styles['step-item']}>
-                <div className={styles['step-marker']}>04</div>
-                <div className={styles['step-content']}>
-                  <div className={styles['step-label']}>CHOOSE RELEASE METHOD</div>
-                  <div className={styles['step-detail']}>Trusted Contacts / Public / Both</div>
-                </div>
+            </div>
+            <div className={styles['step-item']}>
+              <div className={styles['step-marker']}>04</div>
+              <div className={styles['step-content']}>
+                <div className={styles['step-label']}>CHOOSE RELEASE METHOD</div>
+                <div className={styles['step-detail']}>Trusted Contacts / Public / Both</div>
               </div>
-              <div className={styles['step-item']}>
-                <div className={styles['step-marker']}>05</div>
-                <div className={styles['step-content']}>
-                  <div className={styles['step-label']}>ACTIVATE VAULT</div>
-                  <div className={styles['step-detail']}>Digital safety net operational</div>
-                </div>
+            </div>
+            <div className={styles['step-item']}>
+              <div className={styles['step-marker']}>05</div>
+              <div className={styles['step-content']}>
+                <div className={styles['step-label']}>ACTIVATE VAULT</div>
+                <div className={styles['step-detail']}>Digital safety net operational</div>
               </div>
             </div>
           </div>
@@ -314,8 +337,8 @@ export default function Kontakte2() {
         className={styles['newsletter-section']}
         style={{
           transform: `translateY(${
-            scrollY < 5500 ? 100 : 
-            scrollY < 6500 ? Math.max(0, 100 - ((scrollY - 5500) / 1000) * 100) :
+            scrollY < 6500 ? 100 : 
+            scrollY < 7500 ? Math.max(0, 100 - ((scrollY - 6500) / 1000) * 100) :
             0
           }vh)`
         }}

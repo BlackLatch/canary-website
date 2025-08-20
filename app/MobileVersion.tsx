@@ -124,7 +124,6 @@ export default function MobileVersion() {
 
       <section className={styles.mobileHero}>
         <div className={styles.mobileHeroContent}>
-          <img src="/canary.png" alt="Canary" className={styles.mobileCanaryIcon} />
           <h1 className={styles.mobileTitle}>
             <div className={styles.mobileTypewriterLine}>
               {displayedText.length > 0 ? (
@@ -153,15 +152,23 @@ export default function MobileVersion() {
               )}
             </div>
           </h1>
-          <p className={styles.mobileTagline}>
-            A digital failsafe for critical information
-          </p>
-          <p className={styles.mobileDescription}>
-            Think of it like a safe for your most critical stories, truths, or instructions. 
-            If you can't personally unlock it—if you're detained, missing, or unable—Canary 
-            shares access to a predetermined party automatically.
-          </p>
         </div>
+        
+        <div className={styles.mobileScrollIndicator}>
+          <span className={styles.mobileScrollText}>Scroll to Learn</span>
+          <div className={styles.mobileScrollArrow}></div>
+        </div>
+      </section>
+
+      <div className={styles.mobileContentSection}>
+        <p className={styles.mobileTagline}>
+          A digital failsafe for critical information
+        </p>
+        <p className={styles.mobileDescription}>
+          Think of it like a safe for your most critical stories, truths, or instructions. 
+          If you can't personally unlock it — if you're detained, missing, or unable — Canary 
+          shares access to a predetermined party automatically.
+        </p>
         <div className={styles.mobileCTA}>
           <a 
             href="https://demo.canaryapp.io/" 
@@ -186,24 +193,9 @@ export default function MobileVersion() {
             Join Newsletter
           </a>
         </div>
-      </section>
+      </div>
 
-      <section id="about" className={`${styles.mobileSection} ${styles.mobileAboutSection}`}>
-        <h2 className={styles.mobileSectionTitle}>Origin Story</h2>
-        <div className={styles.mobileSectionContent}>
-          <p>
-            Canary originated as a winning hackathon project at the Web3 Privacy Now Hack in Berlin.
-          </p>
-          <p style={{ marginTop: '1rem' }}>
-            Canary was accepted as the first project in the Cypherpunk Launchpad program, 
-            a 3-month incubation program for early-stage privacy projects. We are now building 
-            an MVP of the app.
-          </p>
-        </div>
-        <img src="/w3pn.png" alt="W3PN" className={styles.mobileSponsorLogo} />
-      </section>
-
-      <div className={styles.sectionBlend}></div>
+      <div className={styles.gradientTransition}></div>
 
       <section id="features" className={`${styles.mobileSection} ${styles.mobileFeaturesSection}`}>
         <h2 className={styles.mobileSectionTitle}>
@@ -234,10 +226,12 @@ export default function MobileVersion() {
             <div className={styles.mobileFeatureText}>Trust Minimized</div>
           </div>
         </div>
+      </section>
 
-        <h3 className={styles.mobileHowItWorksTitle}>
+      <section className={`${styles.mobileSection} ${styles.mobileHowItWorksSection}`}>
+        <h2 className={styles.mobileHowItWorksTitle}>
           How it works
-        </h3>
+        </h2>
         
         <div className={styles.mobileSteps}>
           <div className={styles.mobileStep}>
@@ -276,6 +270,21 @@ export default function MobileVersion() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="about" className={`${styles.mobileSection} ${styles.mobileAboutSection}`}>
+        <h2 className={styles.mobileSectionTitle}>Origin Story</h2>
+        <div className={styles.mobileSectionContent}>
+          <p>
+            Canary originated as a winning hackathon project at the Web3 Privacy Now Hack in Berlin.
+          </p>
+          <p style={{ marginTop: '1rem' }}>
+            Canary was accepted as the first project in the Cypherpunk Launchpad program, 
+            a 3-month incubation program for early-stage privacy projects. We are now building 
+            an MVP of the app.
+          </p>
+        </div>
+        <img src="/w3pn.png" alt="W3PN" className={styles.mobileSponsorLogo} />
       </section>
 
       <section id="newsletter" className={styles.mobileNewsletter}>
