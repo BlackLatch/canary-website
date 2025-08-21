@@ -290,7 +290,7 @@
 
 .mobileScrollIndicator {
   position: absolute;
-  bottom: 25vh;
+  bottom: 15vh;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -335,13 +335,16 @@
   position: relative;
   z-index: 3;
   background: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0.75) 0%,
-    rgba(255, 255, 255, 0.85) 20%,
-    rgba(255, 255, 255, 0.95) 50%,
-    rgba(255, 255, 255, 0.92) 80%,
-    rgba(255, 255, 255, 0.88) 100%);
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 5%,
+    rgba(255, 255, 255, 0.3) 15%,
+    rgba(255, 255, 255, 0.5) 25%,
+    rgba(255, 255, 255, 0.7) 40%,
+    rgba(255, 255, 255, 0.85) 60%,
+    rgba(255, 255, 255, 0.95) 80%,
+    rgba(255, 255, 255, 1) 100%);
   backdrop-filter: blur(15px);
-  padding: 0.75rem 1rem 3rem;
+  padding: 2rem 1rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -349,6 +352,42 @@
   margin-top: auto;
   width: 100%;
   box-sizing: border-box;
+}
+
+.mobileContentSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/mesh-mobile.jpg') center/cover;
+  background-attachment: scroll;
+  z-index: -1;
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.25) 20%,
+    rgba(0, 0, 0, 0.35) 30%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.5) 70%,
+    rgba(0, 0, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0.5) 90%,
+    rgba(0, 0, 0, 0.5) 100%);
+  mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.25) 20%,
+    rgba(0, 0, 0, 0.35) 30%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.5) 70%,
+    rgba(0, 0, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0.5) 90%,
+    rgba(0, 0, 0, 0.5) 100%);
 }
 
 .mobileCTA {
@@ -364,12 +403,24 @@
   align-self: center;
 }
 
+.mobileCTARow {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.mobileCTARow .mobileCTAButton {
+  flex: 1;
+  font-size: 0.85rem;
+  padding: 0.875rem 0.5rem;
+}
+
 .mobileCTAButton {
   padding: 0.875rem 1rem;
-  border-radius: 6px;
+  border-radius: 12px;
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: inline-block;
@@ -377,6 +428,10 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   letter-spacing: -0.01em;
   white-space: nowrap;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #000;
+  line-height: 1.3;
 }
 
 .mobileCTAButton:active {
@@ -386,21 +441,21 @@
 .mobilePrimary {
   background: #000;
   color: white;
-  border: 2px solid #000;
+  border: 1px solid #000;
   opacity: 1 !important;
 }
 
 .mobileSecondary {
-  background: white;
+  background: transparent;
   color: #000;
-  border: 2px solid #000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   opacity: 1 !important;
 }
 
 .mobileTertiary {
-  background: white;
+  background: transparent;
   color: #000;
-  border: 2px solid #000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   opacity: 1 !important;
 }
 
@@ -420,53 +475,14 @@
 }
 
 
-.mobileAboutSection::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('/beam.jpeg') center/cover;
-  background-attachment: scroll;
-  z-index: 0;
-  filter: grayscale(100%);
-  -webkit-mask-image: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 5%,
-    rgba(0, 0, 0, 0.3) 15%,
-    rgba(0, 0, 0, 0.5) 25%,
-    rgba(0, 0, 0, 0.7) 35%,
-    rgba(0, 0, 0, 0.85) 45%,
-    rgba(0, 0, 0, 0.95) 55%,
-    black 65%,
-    black 100%);
-  mask-image: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 5%,
-    rgba(0, 0, 0, 0.3) 15%,
-    rgba(0, 0, 0, 0.5) 25%,
-    rgba(0, 0, 0, 0.7) 35%,
-    rgba(0, 0, 0, 0.85) 45%,
-    rgba(0, 0, 0, 0.95) 55%,
-    black 65%,
-    black 100%);
-}
-
 .mobileAboutSection {
   position: relative;
   padding: 4rem 1.5rem 2rem;
-  overflow: visible;
-  margin-bottom: 0;
-  background: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(240, 240, 240, 0.8) 20%,
-    rgba(200, 200, 200, 0.7) 40%,
-    rgba(150, 150, 150, 0.6) 60%,
-    rgba(100, 100, 100, 0.7) 75%,
-    rgba(50, 50, 50, 0.8) 85%,
-    rgba(25, 25, 25, 0.9) 95%,
-    rgba(0, 0, 0, 1) 100%);
+}
+
+.mobileAboutSection > * {
+  position: relative;
+  z-index: 10;
 }
 
 .mobileAboutSection::before {
@@ -475,45 +491,56 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: -100px;
-  background: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0.35) 0%,
-    rgba(255, 255, 255, 0.35) 30%,
-    rgba(240, 240, 240, 0.4) 40%,
-    rgba(220, 220, 220, 0.45) 50%,
-    rgba(180, 180, 180, 0.5) 60%,
-    rgba(140, 140, 140, 0.55) 70%,
-    rgba(100, 100, 100, 0.65) 80%,
-    rgba(60, 60, 60, 0.75) 90%,
-    rgba(30, 30, 30, 0.85) 95%,
-    rgba(15, 15, 15, 0.92) 98%,
-    rgba(0, 0, 0, 0.96) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.mobileAboutSection > * {
-  position: relative;
-  z-index: 2;
+  bottom: 0;
+  background: url('/beam-mobile.jpg') center/cover,
+              linear-gradient(to bottom,
+                rgba(100, 100, 100, 0.4) 0%,
+                rgba(50, 50, 50, 0.6) 50%,
+                rgba(0, 0, 0, 0.8) 70%,
+                transparent 100%);
+  filter: grayscale(100%);
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.2) 20%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.2) 80%,
+    rgba(0, 0, 0, 0.1) 90%,
+    transparent 100%);
+  mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.2) 20%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.2) 80%,
+    rgba(0, 0, 0, 0.1) 90%,
+    transparent 100%);
+  z-index: 0;
 }
 
 
 .gradientTransition {
-  height: 300px;
-  margin: -150px 0;
+  height: 400px;
+  margin: -200px 0;
   position: relative;
   z-index: 10;
   background: linear-gradient(to bottom,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.02) 5%,
+    rgba(255, 255, 255, 0.01) 3%,
+    rgba(255, 255, 255, 0.03) 8%,
     rgba(255, 255, 255, 0.08) 15%,
     rgba(255, 255, 255, 0.15) 25%,
     rgba(255, 255, 255, 0.25) 35%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.35) 55%,
     rgba(255, 255, 255, 0.25) 65%,
     rgba(255, 255, 255, 0.15) 75%,
     rgba(255, 255, 255, 0.08) 85%,
-    rgba(255, 255, 255, 0.02) 95%,
+    rgba(255, 255, 255, 0.03) 92%,
+    rgba(255, 255, 255, 0.01) 97%,
     rgba(255, 255, 255, 0) 100%);
   pointer-events: none;
 }
@@ -532,26 +559,26 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/mesh.png') center/cover;
+  background: url('/mesh-mobile.jpg') center/cover;
   background-attachment: scroll;
   z-index: 0;
   -webkit-mask-image: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 10%,
-    rgba(0, 0, 0, 0.4) 20%,
-    rgba(0, 0, 0, 0.7) 30%,
-    rgba(0, 0, 0, 0.9) 40%,
-    black 50%,
-    black 80%,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 10%,
+    rgba(0, 0, 0, 0.5) 20%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.5) 80%,
     transparent 100%);
   mask-image: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 10%,
-    rgba(0, 0, 0, 0.4) 20%,
-    rgba(0, 0, 0, 0.7) 30%,
-    rgba(0, 0, 0, 0.9) 40%,
-    black 50%,
-    black 80%,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 10%,
+    rgba(0, 0, 0, 0.5) 20%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.5) 80%,
     transparent 100%);
 }
 
@@ -562,7 +589,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(248, 248, 248, 0.35);
+  background: rgba(248, 248, 248, 0.25);
   z-index: 1;
   pointer-events: none;
 }
@@ -688,11 +715,9 @@
 
 .mobileFeatureItem {
   padding: 1.25rem 0.875rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  background: transparent;
   border-radius: 12px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
@@ -733,10 +758,63 @@
   text-align: right;
 }
 
+.mobileHowItWorksSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/wall-mobile.jpg') center/80%;
+  background-attachment: scroll;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.3) 20%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(0, 0, 0, 0.5) 85%,
+    rgba(0, 0, 0, 0.2) 95%,
+    rgba(0, 0, 0, 0.1) 100%);
+  mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.3) 20%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(0, 0, 0, 0.5) 85%,
+    rgba(0, 0, 0, 0.2) 95%,
+    rgba(0, 0, 0, 0.1) 100%);
+}
+
+.mobileHowItWorksSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 248, 248, 0.7);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mobileHowItWorksSection > * {
+  position: relative;
+  z-index: 2;
+}
+
 .mobileHowItWorksTitle {
   font-size: 1.75rem;
   font-weight: 800;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 1.75rem 0;
   text-align: right;
   color: #000;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -749,12 +827,9 @@
   flex-direction: row-reverse;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  background: transparent;
   border-radius: 12px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-  border-right: 4px solid transparent;
-  border-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.3)) 1;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
   text-align: right;
 }
@@ -861,6 +936,11 @@
   height: auto;
 }
 
+.mobileSponsorLogo[src="/w3pn.png"] {
+  filter: invert(1);
+  max-width: 400px;
+}
+
 .mobileAboutSection .mobileSponsorLogo {
   margin-left: 0;
 }
@@ -869,22 +949,163 @@
   filter: invert(1);
 }
 
+.mobileTechStackGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.875rem;
+  margin: 2rem 0;
+}
+
+.mobileTechStackCard {
+  padding: 0.25rem;
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileTechStackCard .mobileSponsorLogo {
+  max-width: 100%;
+  max-height: 120px;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+}
+
 .mobileSponsorContainer {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 2rem 0;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .mobileSponsorContainer .mobileSponsorLogo {
   margin: 0;
-  max-width: 120px;
+  max-width: 70px;
   height: auto;
+  flex: 1;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.mobileSponsorLogo[src="/ipfs.svg"] {
+  max-width: 60px;
+}
+
+.mobileSponsorLogo[src="/ethereum.svg"] {
+  max-width: 60px;
+}
+
+.mobileSponsorLogo[src="/codex.svg"] {
+  max-width: 60px;
+}
+
+.mobileSponsorLogo[src="/taco.svg"] {
+  max-width: 60px;
+}
+
+.mobileTechStackSection {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0.4), rgba(248, 248, 248, 0.6), rgba(248, 248, 248, 0.6));
+  padding-bottom: 1rem;
+}
+
+.mobileTechStackSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/wall-mobile.jpg') center/80%;
+  background-attachment: scroll;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 5%,
+    rgba(0, 0, 0, 0.5) 15%,
+    rgba(0, 0, 0, 0.7) 30%,
+    rgba(0, 0, 0, 0.8) 40%,
+    black 50%,
+    black 100%);
+  mask-image: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 5%,
+    rgba(0, 0, 0, 0.5) 15%,
+    rgba(0, 0, 0, 0.7) 30%,
+    rgba(0, 0, 0, 0.8) 40%,
+    black 50%,
+    black 100%);
+}
+
+.mobileTechStackSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 248, 248, 0.7);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mobileTechStackSection > * {
+  position: relative;
+  z-index: 2;
 }
 
 .mobileOpenSourceSection {
-  background: linear-gradient(to bottom, rgba(248, 248, 248, 0.4), rgba(248, 248, 248, 0.6), rgba(248, 248, 248, 0.4));
+  position: relative;
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0.6), rgba(248, 248, 248, 0.6), rgba(248, 248, 248, 0.4));
+  padding-top: 1rem;
+}
+
+.mobileOpenSourceSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/wall-mobile.jpg') center/80%;
+  background-attachment: scroll;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom,
+    black 0%,
+    black 70%,
+    rgba(0, 0, 0, 0.7) 80%,
+    rgba(0, 0, 0, 0.3) 90%,
+    transparent 100%);
+  mask-image: linear-gradient(to bottom,
+    black 0%,
+    black 70%,
+    rgba(0, 0, 0, 0.7) 80%,
+    rgba(0, 0, 0, 0.3) 90%,
+    transparent 100%);
+}
+
+.mobileOpenSourceSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 248, 248, 0.7);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mobileOpenSourceSection > * {
+  position: relative;
+  z-index: 2;
 }
 
 .mobileGithubLink, .mobileLearnMoreLink {
@@ -896,10 +1117,53 @@
   color: #e53e3e;
   text-decoration: underline;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.githubIcon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
 
 .mobileSupportSection {
-  background: linear-gradient(to bottom, rgba(229, 62, 62, 0.05), rgba(229, 62, 62, 0.1), rgba(229, 62, 62, 0.05));
+  background: #ffffff;
+  padding: 3rem 1.5rem;
+  margin-top: 0;
+}
+
+.mobileDonationLink {
+  margin: 2rem 0 1rem;
+  text-align: center;
+  padding: 1.25rem 0.875rem;
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.mobileDonationLink a {
+  color: #e53e3e;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+}
+
+.mobileDonationLink a:hover {
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+.ethereumIcon {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+  display: inline-block;
 }
 
 .mobileSectionDivider {
