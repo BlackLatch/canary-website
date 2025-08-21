@@ -323,8 +323,11 @@ export default function MobileVersion() {
         </h2>
         <div className={styles.mobileSectionContent}>
           <p>
-            Today, Canary is led by a small team of three. Running the project requires real overhead — from hosting and TACo node services to development and design. While not built for profit, sustainability matters. Supporting Canary means giving the project the chance not only to exist, but to evolve, and to pay the people doing the work of stewardship.
+            Today, Canary is led by a small team of three. Running the project requires real overhead, from servers, to tools that make it run, to the time spent on design and development. We didn't build Canary for profit, but for impact. To keep going, it needs support. Your contribution helps us survive, evolve, and sustains the people doing the work of stewardship.
           </p>
+          <div className={styles.mobileDonateText}>
+            <strong>Donate Here</strong>
+          </div>
           <div className={styles.mobileDonationLink}>
             <a href="https://etherscan.io/address/canaryapp.eth" target="_blank" rel="noopener noreferrer">
               <span className={styles.ethereumIcon}>Ξ</span> canaryapp.eth

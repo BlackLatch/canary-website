@@ -478,6 +478,7 @@
 .mobileAboutSection {
   position: relative;
   padding: 4rem 1.5rem 2rem;
+  background: #ffffff;
 }
 
 .mobileAboutSection > * {
@@ -501,18 +502,22 @@
   filter: grayscale(100%);
   -webkit-mask-image: linear-gradient(to bottom,
     transparent 0%,
-    rgba(0, 0, 0, 0.1) 10%,
-    rgba(0, 0, 0, 0.2) 20%,
-    rgba(0, 0, 0, 0.3) 30%,
+    transparent 5%,
+    rgba(0, 0, 0, 0.05) 10%,
+    rgba(0, 0, 0, 0.1) 15%,
+    rgba(0, 0, 0, 0.2) 25%,
+    rgba(0, 0, 0, 0.3) 35%,
     rgba(0, 0, 0, 0.3) 60%,
     rgba(0, 0, 0, 0.2) 80%,
     rgba(0, 0, 0, 0.1) 90%,
     transparent 100%);
   mask-image: linear-gradient(to bottom,
     transparent 0%,
-    rgba(0, 0, 0, 0.1) 10%,
-    rgba(0, 0, 0, 0.2) 20%,
-    rgba(0, 0, 0, 0.3) 30%,
+    transparent 5%,
+    rgba(0, 0, 0, 0.05) 10%,
+    rgba(0, 0, 0, 0.1) 15%,
+    rgba(0, 0, 0, 0.2) 25%,
+    rgba(0, 0, 0, 0.3) 35%,
     rgba(0, 0, 0, 0.3) 60%,
     rgba(0, 0, 0, 0.2) 80%,
     rgba(0, 0, 0, 0.1) 90%,
@@ -569,8 +574,10 @@
     rgba(0, 0, 0, 0.5) 30%,
     rgba(0, 0, 0, 0.5) 40%,
     rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.5) 80%,
-    transparent 100%);
+    rgba(0, 0, 0, 0.5) 70%,
+    rgba(0, 0, 0, 0.3) 85%,
+    rgba(0, 0, 0, 0.2) 95%,
+    rgba(0, 0, 0, 0.1) 100%);
   mask-image: linear-gradient(to bottom,
     rgba(0, 0, 0, 0.5) 0%,
     rgba(0, 0, 0, 0.5) 10%,
@@ -578,8 +585,10 @@
     rgba(0, 0, 0, 0.5) 30%,
     rgba(0, 0, 0, 0.5) 40%,
     rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.5) 80%,
-    transparent 100%);
+    rgba(0, 0, 0, 0.5) 70%,
+    rgba(0, 0, 0, 0.3) 85%,
+    rgba(0, 0, 0, 0.1) 95%,
+    rgba(0, 0, 0, 0.05) 100%);
 }
 
 .mobileFeaturesSection::before {
@@ -589,7 +598,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(248, 248, 248, 0.25);
+  background: linear-gradient(to bottom,
+    rgba(248, 248, 248, 0.25) 0%,
+    rgba(248, 248, 248, 0.25) 70%,
+    rgba(248, 248, 248, 0.4) 85%,
+    rgba(248, 248, 248, 0.6) 95%,
+    rgba(248, 248, 248, 0.7) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -769,24 +783,24 @@
   background-attachment: scroll;
   z-index: 0;
   -webkit-mask-image: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 10%,
-    rgba(0, 0, 0, 0.3) 20%,
-    rgba(0, 0, 0, 0.5) 30%,
-    rgba(0, 0, 0, 0.7) 40%,
-    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.2) 5%,
+    rgba(0, 0, 0, 0.3) 15%,
+    rgba(0, 0, 0, 0.5) 25%,
+    rgba(0, 0, 0, 0.7) 35%,
+    rgba(0, 0, 0, 0.8) 45%,
     rgba(0, 0, 0, 0.8) 60%,
     rgba(0, 0, 0, 0.7) 70%,
     rgba(0, 0, 0, 0.5) 85%,
     rgba(0, 0, 0, 0.2) 95%,
     rgba(0, 0, 0, 0.1) 100%);
   mask-image: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 10%,
-    rgba(0, 0, 0, 0.3) 20%,
-    rgba(0, 0, 0, 0.5) 30%,
-    rgba(0, 0, 0, 0.7) 40%,
-    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.2) 5%,
+    rgba(0, 0, 0, 0.3) 15%,
+    rgba(0, 0, 0, 0.5) 25%,
+    rgba(0, 0, 0, 0.7) 35%,
+    rgba(0, 0, 0, 0.8) 45%,
     rgba(0, 0, 0, 0.8) 60%,
     rgba(0, 0, 0, 0.7) 70%,
     rgba(0, 0, 0, 0.5) 85%,
@@ -801,7 +815,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(248, 248, 248, 0.7);
+  background: linear-gradient(to bottom,
+    rgba(248, 248, 248, 0.7) 0%,
+    rgba(248, 248, 248, 0.7) 50%,
+    rgba(248, 248, 248, 0.7) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -1033,6 +1050,7 @@
     rgba(0, 0, 0, 0.7) 30%,
     rgba(0, 0, 0, 0.8) 40%,
     black 50%,
+    black 80%,
     black 100%);
   mask-image: linear-gradient(to bottom,
     rgba(0, 0, 0, 0.1) 0%,
@@ -1041,6 +1059,7 @@
     rgba(0, 0, 0, 0.7) 30%,
     rgba(0, 0, 0, 0.8) 40%,
     black 50%,
+    black 80%,
     black 100%);
 }
 
@@ -1079,16 +1098,26 @@
   z-index: 0;
   -webkit-mask-image: linear-gradient(to bottom,
     black 0%,
-    black 70%,
-    rgba(0, 0, 0, 0.7) 80%,
-    rgba(0, 0, 0, 0.3) 90%,
-    transparent 100%);
+    black 20%,
+    black 50%,
+    rgba(0, 0, 0, 0.7) 65%,
+    rgba(0, 0, 0, 0.4) 75%,
+    rgba(0, 0, 0, 0.2) 85%,
+    rgba(0, 0, 0, 0.1) 92%,
+    rgba(0, 0, 0, 0.05) 96%,
+    rgba(0, 0, 0, 0.02) 98%,
+    rgba(0, 0, 0, 0.01) 100%);
   mask-image: linear-gradient(to bottom,
     black 0%,
-    black 70%,
-    rgba(0, 0, 0, 0.7) 80%,
-    rgba(0, 0, 0, 0.3) 90%,
-    transparent 100%);
+    black 20%,
+    black 50%,
+    rgba(0, 0, 0, 0.7) 65%,
+    rgba(0, 0, 0, 0.4) 75%,
+    rgba(0, 0, 0, 0.2) 85%,
+    rgba(0, 0, 0, 0.1) 92%,
+    rgba(0, 0, 0, 0.05) 96%,
+    rgba(0, 0, 0, 0.02) 98%,
+    rgba(0, 0, 0, 0.01) 100%);
 }
 
 .mobileOpenSourceSection::before {
@@ -1098,7 +1127,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(248, 248, 248, 0.7);
+  background: linear-gradient(to bottom,
+    rgba(248, 248, 248, 0.7) 0%,
+    rgba(248, 248, 248, 0.7) 70%,
+    rgba(248, 248, 248, 0.8) 80%,
+    rgba(248, 248, 248, 0.9) 90%,
+    rgba(255, 255, 255, 0.95) 95%,
+    rgba(255, 255, 255, 1) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -1130,12 +1165,20 @@
 
 .mobileSupportSection {
   background: #ffffff;
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1.5rem 3rem;
   margin-top: 0;
 }
 
+.mobileDonateText {
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 1.5rem 0 0.5rem;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
 .mobileDonationLink {
-  margin: 2rem 0 1rem;
+  margin: 0.5rem 0 1rem;
   text-align: center;
   padding: 1.25rem 0.875rem;
   background: transparent;

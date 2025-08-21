@@ -426,8 +426,11 @@ export default function Kontakte2() {
         <div className={styles['feature-header']}>
           <h2 className={styles['feature-title']}>Support Us ♥</h2>
           <p className={styles['feature-description']}>
-            Today, Canary is led by a small team of three. Running the project requires real overhead — from hosting and TACo node services to development and design. While not built for profit, sustainability matters. Supporting Canary means giving the project the chance not only to exist, but to evolve, and to pay the people doing the work of stewardship.
+            Today, Canary is led by a small team of three. Running the project requires real overhead, from servers, to tools that make it run, to the time spent on design and development. We didn't build Canary for profit, but for impact. To keep going, it needs support. Your contribution helps us survive, evolve, and sustains the people doing the work of stewardship.
           </p>
+          <div className={styles['desktop-donate-text']}>
+            <strong>Donate Here</strong>
+          </div>
           <div className={styles['desktop-donation-link']}>
             <a href="https://etherscan.io/address/canaryapp.eth" target="_blank" rel="noopener noreferrer" className={styles['link']}>
               <span className={styles['ethereum-icon']}>Ξ</span> canaryapp.eth
