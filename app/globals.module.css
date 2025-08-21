@@ -1451,8 +1451,16 @@
   text-align: center;
 }
 
+.desktop-donate-text {
+  text-align: center;
+  font-size: 14px;
+  margin: 25px 0 8px;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
 .desktop-donation-link {
-  margin: 30px 0 20px;
+  margin: 8px 0 20px;
   text-align: center;
   padding: 20px;
   background: rgba(229, 62, 62, 0.05);
@@ -1512,4 +1520,800 @@
   transform: none !important;
   backdrop-filter: none !important;
   mix-blend-mode: normal !important;
+}
+
+/* Desktop Clean Layout */
+.desktop-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('/bird.jpeg') center/cover fixed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.desktop-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 100;
+  padding: 0.5rem 2rem;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.desktop-logo {
+  height: 60px;
+  width: auto;
+}
+
+.desktop-nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.desktop-nav-links a,
+.desktop-nav-links div {
+  color: #000;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.desktop-nav-links a:hover,
+.desktop-nav-links div:hover {
+  color: #e53e3e;
+}
+
+.desktop-hero {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/bird.jpeg') center/cover;
+}
+
+.desktop-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .desktop-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(248, 248, 248, 0.9));
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-hero::after {
+    display: none;
+  }
+}
+
+.desktop-hero-content {
+  max-width: 800px;
+  z-index: 2;
+  position: relative;
+}
+
+.desktop-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+  color: #000;
+  letter-spacing: -0.03em;
+  text-align: left;
+}
+
+.desktop-typewriter-line {
+  display: block;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.desktop-canary-word {
+  color: #e53e3e;
+}
+
+.desktop-cursor {
+  display: inline-block;
+  font-weight: 300;
+  color: #000;
+  margin-left: 4px;
+}
+
+.desktop-quote-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0.3), rgba(255, 255, 255, 0.8));
+  position: relative;
+}
+
+.desktop-quote-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/mesh-desktop.jpg') center/cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.desktop-quote {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+.desktop-waveform-placeholder {
+  font-size: 1rem;
+  color: #888;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  font-style: italic;
+  max-width: 500px;
+}
+
+.desktop-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.desktop-cta-button {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: inline-block;
+  min-width: 160px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.desktop-primary {
+  background: #000;
+  color: white;
+  border: 1px solid #000;
+}
+
+.desktop-primary:hover {
+  background: #333;
+}
+
+.desktop-secondary {
+  background: transparent;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.desktop-secondary:hover {
+  background: #f5f5f5;
+}
+
+.desktop-tertiary {
+  background: transparent;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.desktop-tertiary:hover {
+  background: #f5f5f5;
+}
+
+.desktop-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+}
+
+.desktop-section > *,
+.desktop-container section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Desktop sections - basic structure */
+.desktop-container section {
+  position: relative;
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Desktop-only background images - only applies above 768px */
+@media (min-width: 769px) {
+  /* Override desktop container to be full width */
+  .desktop-container {
+    max-width: none;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Make desktop sections full width for borderless experience */
+  .desktop-container section {
+    width: 100vw;
+    margin: 0;
+    padding: 6rem 0;
+    max-width: none;
+    display: block;
+    position: relative;
+  }
+  
+  .desktop-container section > * {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+  }
+
+  /* Specific section alignments */
+  /* Features Section */
+  .desktop-container section:nth-of-type(4) .desktop-section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .desktop-container section:nth-of-type(4) .desktop-section-content {
+    text-align: left;
+  }
+
+  /* How it Works Section */
+  .desktop-container section:nth-of-type(5) .desktop-section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* Technology Section */
+  .desktop-container section:nth-of-type(6) .desktop-section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* Open Source Section */
+  .desktop-container section:nth-of-type(7) .desktop-section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* Origin Story Section */
+  .desktop-container section:nth-of-type(8) .desktop-section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .desktop-container section:nth-of-type(8) .desktop-section-content {
+    text-align: left;
+  }
+
+  /* Support Section */
+  .desktop-container section:nth-of-type(9) .desktop-section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  /* Hero section - make full width and full height */
+  .desktop-hero {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .desktop-hero-content {
+    position: absolute;
+    left: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 600px;
+    z-index: 10;
+    text-align: left;
+    padding: 2rem;
+  }
+
+  /* Bottom right corner elements */
+  .desktop-hero-bottom-right {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    max-width: 450px;
+    z-index: 10;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .desktop-hero-quote {
+    font-size: 0.95rem;
+    color: #000;
+    line-height: 1.4;
+    margin-bottom: 0;
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 0 0 20px rgba(255,255,255,0.95), 0 0 40px rgba(255,255,255,0.8);
+    text-align: right;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+  }
+
+  .desktop-hero-waveform {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 6px;
+    font-style: italic;
+    backdrop-filter: blur(10px);
+    width: 100%;
+  }
+
+  .desktop-hero-cta {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .desktop-hero-cta .desktop-cta-button {
+    min-width: auto;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  /* Hide original quote section on desktop */
+  .desktop-quote-section {
+    display: none;
+  }
+  
+  /* Quote Section Background - mesh */
+  .desktop-container section:nth-of-type(2) {
+    background: url('/mesh-desktop.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .desktop-container section:nth-of-type(2)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Quote Section Background - mesh */
+  .desktop-container section:nth-of-type(3) {
+    background: url('/mesh-desktop.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .desktop-container section:nth-of-type(3)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Features Section Background - mesh */
+  .desktop-container section:nth-of-type(4) {
+    background: url('/mesh-desktop.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .desktop-container section:nth-of-type(4)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* How it Works Section Background - wall */
+  .desktop-container section:nth-of-type(5) {
+    background: url('/wall-desktop.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .desktop-container section:nth-of-type(5)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Technology Section Background - wall */
+  .desktop-container section:nth-of-type(6) {
+    background: url('/wall-desktop.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .desktop-container section:nth-of-type(6)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Open Source Section Background - wall */
+  .desktop-container section:nth-of-type(7) {
+    background: url('/wall-desktop.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .desktop-container section:nth-of-type(7)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Origin Story Section Background - beam */
+  .desktop-container section:nth-of-type(8) {
+    background: url('/beam-desktop.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+    filter: grayscale(100%);
+  }
+  
+  .desktop-container section:nth-of-type(8)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Support Section - clean white background */
+  .desktop-container section:nth-of-type(9) {
+    background: #ffffff;
+  }
+
+  /* Newsletter Section - black background (already handled) */
+  .desktop-container section:nth-of-type(10) {
+    background: #000000;
+  }
+
+  /* Ensure content appears above overlay */
+  .desktop-container section > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.desktop-section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #000;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+}
+
+.desktop-section-content {
+  font-size: 1.125rem;
+  display: block;
+  width: 100%;
+  line-height: 1.7;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.desktop-section-content p {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.desktop-section-content p:last-child {
+  margin-bottom: 0;
+}
+
+.desktop-dead-mans-switch-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #e53e3e;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.desktop-dead-mans-switch-link:hover {
+  color: #e53e3e;
+}
+
+.desktop-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desktop-step {
+  padding: 2rem 1.5rem;
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.desktop-step-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #e53e3e;
+  margin-bottom: 1rem;
+  font-family: 'Courier New', monospace;
+}
+
+.desktop-step-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.desktop-tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem auto;
+  max-width: 600px;
+}
+
+.desktop-tech-stack-card {
+  padding: 1rem;
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.desktop-tech-stack-card:hover {
+  border-color: #e53e3e;
+  transform: translateY(-2px);
+}
+
+.desktop-tech-logo {
+  max-width: 100px;
+  max-height: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.desktop-learn-more-link {
+  margin-top: 2rem;
+}
+
+.desktop-learn-more-link a {
+  color: #e53e3e;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.desktop-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem auto;
+  max-width: 800px;
+}
+
+.desktop-feature-item {
+  padding: 2rem 1.5rem;
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.desktop-feature-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  display: block;
+  object-fit: contain;
+}
+
+.desktop-feature-text {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.desktop-feature-subtext {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.desktop-github-link {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.desktop-github-link a {
+  color: #e53e3e;
+  text-decoration: underline;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.desktop-github-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.desktop-origin-story-link {
+  color: #e53e3e;
+  text-decoration: underline;
+  text-decoration-color: #e53e3e;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.desktop-origin-story-link:hover {
+  color: #000;
+  text-decoration-color: #000;
+}
+
+.desktop-sponsor-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.desktop-sponsor-logo {
+  max-width: 300px;
+  height: auto;
+  filter: invert(1);
+}
+
+.desktop-ethereum-icon {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.desktop-newsletter {
+  background: #000;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.desktop-newsletter-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.desktop-newsletter-description {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desktop-newsletter-embed {
+  max-width: 500px;
+  margin: 0 auto;
 } 
