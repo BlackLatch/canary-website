@@ -110,28 +110,24 @@ export default function Kontakte2() {
             </div>
           </h1>
         </div>
+        <div className={styles['desktop-hero-bottom-section']}>
+          <p className={styles['desktop-hero-quote']}>
+            <em>"If you are hearing this message, it means I could not respond. Here is what you need to know…"</em>
+          </p>
+          <div className={styles['desktop-hero-bottom-buttons']}>
+            <a href="https://demo.canaryapp.io/" target="_blank" rel="noopener noreferrer" className={`${styles['desktop-cta-button']} ${styles['desktop-primary']}`}>
+              Try Demo
+            </a>
+            <a href="https://docs.canaryapp.io/" target="_blank" rel="noopener noreferrer" className={`${styles['desktop-cta-button']} ${styles['desktop-secondary']}`}>
+              Read Documentation
+            </a>
+            <a href="#newsletter" className={`${styles['desktop-cta-button']} ${styles['desktop-tertiary']}`}>
+              Join Newsletter
+            </a>
+          </div>
+        </div>
       </section>
 
-      {/* Quote Section - hidden on desktop */}
-      <section className={styles['desktop-quote-section']}>
-        <p className={styles['desktop-quote']}>
-          <em>"If you are hearing this message, it means I could not respond. Here is what you need to know…"</em>
-        </p>
-        <div className={styles['desktop-waveform-placeholder']}>
-          [audio waveform animation reminiscent of a voice note]
-        </div>
-        <div className={styles['desktop-cta']}>
-          <a href="https://demo.canaryapp.io/" target="_blank" rel="noopener noreferrer" className={`${styles['desktop-cta-button']} ${styles['desktop-primary']}`}>
-            Try Demo
-          </a>
-          <a href="https://docs.canaryapp.io/" target="_blank" rel="noopener noreferrer" className={`${styles['desktop-cta-button']} ${styles['desktop-secondary']}`}>
-            Read Documentation
-          </a>
-          <a href="#newsletter" className={`${styles['desktop-cta-button']} ${styles['desktop-tertiary']}`}>
-            Join Newsletter
-          </a>
-        </div>
-      </section>
 
       {/* Features Section */}
       <section id="features" className={styles['desktop-section']}>
