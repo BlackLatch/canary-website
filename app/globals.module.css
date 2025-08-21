@@ -1451,34 +1451,33 @@
   text-align: center;
 }
 
-.desktop-donate-text {
-  text-align: center;
-  font-size: 14px;
-  margin: 25px 0 8px;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+.desktop-donation-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
-.desktop-donation-link {
-  margin: 8px 0 20px;
-  text-align: center;
-  padding: 20px;
-  background: rgba(229, 62, 62, 0.05);
+.desktop-donation-button {
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 12px;
-  border: 2px solid rgba(229, 62, 62, 0.1);
-}
-
-.desktop-donation-link a {
-  font-weight: 700;
-  font-size: 18px;
-  font-family: 'Courier New', monospace;
   text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.desktop-donation-link a:hover {
-  text-decoration: underline;
+.desktop-donation-button:hover {
+  background: #000;
+  color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .ethereum-icon {
@@ -1813,24 +1812,35 @@
 
   /* Specific section alignments */
   /* Features Section */
+  .desktop-container section:nth-of-type(2) .desktop-section-title {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+  .desktop-container section:nth-of-type(2) .desktop-section-content {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .desktop-container section:nth-of-type(2) .desktop-section-content p {
+    max-width: 100%;
+  }
+
+  /* How it Works Section */
+  .desktop-container section:nth-of-type(3) .desktop-section-title {
+    text-align: right !important;
+    margin-bottom: 3rem;
+  }
+
+  /* Technology Section */
   .desktop-container section:nth-of-type(4) .desktop-section-title {
     text-align: center;
     margin-bottom: 3rem;
   }
   .desktop-container section:nth-of-type(4) .desktop-section-content {
-    text-align: left;
-  }
-
-  /* How it Works Section */
-  .desktop-container section:nth-of-type(5) .desktop-section-title {
     text-align: center;
-    margin-bottom: 3rem;
   }
-
-  /* Technology Section */
-  .desktop-container section:nth-of-type(6) .desktop-section-title {
+  .desktop-container section:nth-of-type(4) .desktop-section-content p {
     text-align: center;
-    margin-bottom: 3rem;
   }
 
   /* Open Source Section */
@@ -1846,6 +1856,9 @@
   }
   .desktop-container section:nth-of-type(8) .desktop-section-content {
     text-align: left;
+  }
+  .desktop-container section:nth-of-type(8) .desktop-section-content p:last-child {
+    margin-bottom: 2.5rem;
   }
 
   /* Support Section */
@@ -2147,7 +2160,8 @@
 }
 
 .desktop-section-content p {
-  margin-bottom: 1.5rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
   text-align: left;
 }
 
@@ -2173,7 +2187,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 1.75rem;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -2305,7 +2319,7 @@
 }
 
 .desktop-origin-story-link {
-  color: #e53e3e;
+  color: #000;
   text-decoration: underline;
   text-decoration-color: #e53e3e;
   text-decoration-thickness: 3px;
@@ -2315,18 +2329,38 @@
 }
 
 .desktop-origin-story-link:hover {
-  color: #000;
-  text-decoration-color: #000;
+  color: #e53e3e;
+  text-decoration-color: #e53e3e;
 }
 
 .desktop-sponsor-container {
   display: flex;
+  justify-content: flex-start;
+  margin: 3rem auto 2rem;
+  gap: 2rem;
+}
+
+.desktop-sponsor-card {
+  padding: 2rem;
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 2rem auto;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  max-width: 350px;
+}
+
+.desktop-sponsor-card:hover {
+  border-color: #e53e3e;
+  transform: translateY(-2px);
 }
 
 .desktop-sponsor-logo {
-  max-width: 300px;
+  max-width: 250px;
   height: auto;
   filter: invert(1);
 }

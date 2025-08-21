@@ -259,7 +259,7 @@ export default function Kontakte2() {
       <section id="about" className={styles['desktop-section']}>
         <h2 className={styles['desktop-section-title']}>
           Learn about our<br />
-          <a href="https://capsules.thirdroom.studio/1/" target="_blank" rel="noopener noreferrer" className={styles['desktop-origin-story-link']} style={{ fontWeight: 'bold', textDecoration: 'underline', textDecorationColor: '#e53e3e' }}>
+          <a href="https://capsules.thirdroom.studio/1/" target="_blank" rel="noopener noreferrer" className={styles['desktop-origin-story-link']}>
             origin story
           </a>
         </h2>
@@ -272,7 +272,9 @@ export default function Kontakte2() {
           </p>
         </div>
         <div className={styles['desktop-sponsor-container']}>
-          <img src="/w3pn.png" alt="W3PN" className={styles['desktop-sponsor-logo']} />
+          <a href="https://web3privacy.info/" target="_blank" rel="noopener noreferrer" className={styles['desktop-sponsor-card']}>
+            <img src="/w3pn.png" alt="W3PN" className={styles['desktop-sponsor-logo']} />
+          </a>
         </div>
       </section>
 
@@ -283,12 +285,9 @@ export default function Kontakte2() {
           <p>
             Today, Canary is led by a small team of three. Running the project requires real overhead, from servers, to tools that make it run, to the time spent on design and development. We didn't build Canary for profit, but for impact. To keep going, it needs support. Your contribution helps us survive, evolve, and sustains the people doing the work of stewardship.
           </p>
-          <div className={styles['desktop-donate-text']}>
-            <strong>Donate Here</strong>
-          </div>
-          <div className={styles['desktop-donation-link']}>
-            <a href="https://etherscan.io/address/canaryapp.eth" target="_blank" rel="noopener noreferrer">
-              <span className={styles['desktop-ethereum-icon']}>Ξ</span> canaryapp.eth
+          <div className={styles['desktop-donation-container']}>
+            <a href="https://etherscan.io/address/canaryapp.eth" target="_blank" rel="noopener noreferrer" className={styles['desktop-donation-button']}>
+              <span className={styles['desktop-ethereum-icon']}>Ξ</span> Donate: canaryapp.eth
             </a>
           </div>
         </div>
