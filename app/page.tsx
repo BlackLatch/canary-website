@@ -255,40 +255,45 @@ export default function Kontakte2() {
         </div>
       </section>
 
-      {/* Origin Story Section */}
-      <section id="about" className={styles['desktop-section']}>
-        <h2 className={styles['desktop-section-title']}>
-          Learn about our<br />
-          <a href="https://capsules.thirdroom.studio/1/" target="_blank" rel="noopener noreferrer" className={styles['desktop-origin-story-link']}>
-            origin story
-          </a>
-        </h2>
-        <div className={styles['desktop-section-content']}>
-          <p>
-            The name <em>Canary</em> comes from the <em>canary in the coal mine</em> — an early warning system that signaled danger before it was too late. Our project carries that same purpose: to ensure that silence itself becomes a signal, and that critical truths are not lost.
-          </p>
-          <p>
-            Canary began as a winning hackathon project at the Web3 Privacy Now Hack in Berlin (<a href="#" target="_blank" rel="noopener noreferrer">link</a>) and was later accepted as the first project in the <strong>Cypherpunk Launchpad</strong>, a three-month incubation for early-stage privacy tools.
-          </p>
-        </div>
-        <div className={styles['desktop-sponsor-container']}>
-          <a href="https://web3privacy.info/" target="_blank" rel="noopener noreferrer" className={styles['desktop-sponsor-card']}>
-            <img src="/w3pn.png" alt="W3PN" className={styles['desktop-sponsor-logo']} />
-          </a>
-        </div>
-      </section>
+      {/* Combined Origin Story and Support Us Section */}
+      <section className={styles['desktop-combined-section']}>
+        <div className={styles['desktop-two-columns']}>
+          {/* Origin Story Column */}
+          <div id="about" className={styles['desktop-column-left']}>
+            <h2 className={styles['desktop-section-title']}>
+              Learn about our<br />
+              <a href="https://capsules.thirdroom.studio/1/" target="_blank" rel="noopener noreferrer" className={styles['desktop-origin-story-link']}>
+                origin story
+              </a>
+            </h2>
+            <div className={styles['desktop-section-content']}>
+              <p>
+                The name <em>Canary</em> comes from the <em>canary in the coal mine</em> — an early warning system that signaled danger before it was too late. Our project carries that same purpose: to ensure that silence itself becomes a signal, and that critical truths are not lost.
+              </p>
+              <p>
+                Canary began as a winning hackathon project at the Web3 Privacy Now Hack in Berlin (<a href="#" target="_blank" rel="noopener noreferrer">link</a>) and was later accepted as the first project in the <strong>Cypherpunk Launchpad</strong>, a three-month incubation for early-stage privacy tools.
+              </p>
+            </div>
+            <div className={styles['desktop-sponsor-container']}>
+              <a href="https://web3privacy.info/" target="_blank" rel="noopener noreferrer" className={styles['desktop-sponsor-card']}>
+                <img src="/w3pn.png" alt="W3PN" className={styles['desktop-sponsor-logo']} />
+              </a>
+            </div>
+          </div>
 
-      {/* Support Us Section */}
-      <section className={styles['desktop-section']}>
-        <h2 className={styles['desktop-section-title']}>Support Us ♥</h2>
-        <div className={styles['desktop-section-content']}>
-          <p>
-            Today, Canary is led by a small team of three. Running the project requires real overhead, from servers, to tools that make it run, to the time spent on design and development. We didn't build Canary for profit, but for impact. To keep going, it needs support. Your contribution helps us survive, evolve, and sustains the people doing the work of stewardship.
-          </p>
-          <div className={styles['desktop-donation-container']}>
-            <a href="https://etherscan.io/address/canaryapp.eth" target="_blank" rel="noopener noreferrer" className={styles['desktop-donation-button']}>
-              <span className={styles['desktop-ethereum-icon']}>Ξ</span> Donate: canaryapp.eth
-            </a>
+          {/* Support Us Column */}
+          <div className={styles['desktop-column-right']}>
+            <h2 className={styles['desktop-section-title']}>Support Us ♥</h2>
+            <div className={styles['desktop-section-content']}>
+              <p>
+                Today, Canary is led by a small team of three. Running the project requires real overhead, from servers, to tools that make it run, to the time spent on design and development. We didn't build Canary for profit, but for impact. To keep going, it needs support. Your contribution helps us survive, evolve, and sustains the people doing the work of stewardship.
+              </p>
+              <div className={styles['desktop-donation-container']}>
+                <a href="https://etherscan.io/address/canaryapp.eth" target="_blank" rel="noopener noreferrer" className={styles['desktop-donation-button']}>
+                  <span className={styles['desktop-ethereum-icon']}>Ξ</span> Donate: canaryapp.eth
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

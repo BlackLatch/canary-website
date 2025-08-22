@@ -1521,6 +1521,91 @@
   mix-blend-mode: normal !important;
 }
 
+/* Combined Origin Story and Support Section */
+.desktop-combined-section {
+  padding: 6rem 2rem;
+  background: url('/beam.jpeg') center/cover;
+  position: relative;
+  width: 100%;
+}
+
+.desktop-combined-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.desktop-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.desktop-column-left {
+  text-align: left;
+}
+
+.desktop-column-left .desktop-section-title,
+.desktop-column-left .desktop-section-content {
+  text-align: left;
+}
+
+.desktop-column-right {
+  text-align: right;
+  padding-top: 35rem; /* Move Support Us below Origin Story */
+}
+
+.desktop-column-right .desktop-section-title,
+.desktop-column-right .desktop-section-content,
+.desktop-column-right .desktop-section-content p {
+  text-align: right;
+}
+
+.desktop-column-right .desktop-donation-container {
+  justify-content: flex-end;
+}
+
+/* Mobile view - stack vertically */
+@media (max-width: 768px) {
+  .desktop-combined-section {
+    background: transparent;
+  }
+  
+  .desktop-combined-section::after {
+    display: none;
+  }
+  
+  .desktop-two-columns {
+    display: block;
+  }
+  
+  .desktop-column-left,
+  .desktop-column-right {
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+  
+  .desktop-column-right .desktop-section-title,
+  .desktop-column-right .desktop-section-content,
+  .desktop-column-right .desktop-section-content p {
+    text-align: left;
+  }
+  
+  .desktop-column-right .desktop-donation-container {
+    justify-content: center;
+  }
+}
+
 /* Desktop Clean Layout */
 .desktop-container {
   min-height: 100vh;
@@ -1636,7 +1721,7 @@
 }
 
 .desktop-title {
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.15;
@@ -1847,23 +1932,7 @@
     margin-bottom: 3rem;
   }
 
-  /* Origin Story Section */
-  .desktop-container section:nth-of-type(8) .desktop-section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .desktop-container section:nth-of-type(8) .desktop-section-content {
-    text-align: left;
-  }
-  .desktop-container section:nth-of-type(8) .desktop-section-content p:last-child {
-    margin-bottom: 2.5rem;
-  }
-
-  /* Support Section */
-  .desktop-container section:nth-of-type(9) .desktop-section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
+  /* Origin Story and Support sections now combined - see desktop-combined-section */
   
   /* Hero section - make full width and full height */
   .desktop-hero {
@@ -2097,30 +2166,7 @@
     z-index: 0;
   }
 
-  /* Origin Story Section Background - beam */
-  .desktop-container section:nth-of-type(8) {
-    background: url('/beam.jpeg') center/cover;
-    background-attachment: scroll;
-    position: relative;
-    background-position: center center;
-  }
-  
-  .desktop-container section:nth-of-type(8)::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.75);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* Support Section - clean white background */
-  .desktop-container section:nth-of-type(9) {
-    background: #ffffff;
-  }
+  /* Origin Story and Support backgrounds now handled by desktop-combined-section */
 
   /* Newsletter Section - black background (already handled) */
   .desktop-container section:nth-of-type(10) {
@@ -2132,6 +2178,10 @@
   
   .desktop-container section:nth-of-type(10)::after {
     display: none;
+  }
+  
+  .desktop-container section:nth-of-type(10) > * {
+    text-align: center !important;
   }
 
   /* Ensure content appears above overlay */
