@@ -133,9 +133,6 @@ export default function MobileVersion() {
         <p className={styles.mobileQuote} style={{ fontWeight: 'bold' }}>
           <em>"If you are hearing this message, it means I could not respond. Here is what you need to know…"</em>
         </p>
-        <div className={styles.mobileWaveformPlaceholder}>
-          [audio waveform animation reminiscent of a voice note]
-        </div>
         <div className={styles.mobileCTA}>
           <a 
             href="https://demo.canaryapp.io/" 
