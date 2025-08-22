@@ -1636,7 +1636,7 @@
 }
 
 .desktop-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.15;
@@ -1820,7 +1820,7 @@
     text-align: left;
   }
   .desktop-container section:nth-of-type(2) .desktop-section-content p {
-    max-width: 100%;
+    max-width: 600px;
   }
 
   /* How it Works Section */
@@ -1943,11 +1943,11 @@
     font-style: italic;
     font-weight: 500;
     text-align: right;
-    background: rgba(255, 255, 255, 0.9);
+    background: transparent;
     padding: 1.25rem 1.5rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    backdrop-filter: none;
+    box-shadow: none;
   }
 
   .desktop-hero-waveform {
@@ -2099,10 +2099,10 @@
 
   /* Origin Story Section Background - beam */
   .desktop-container section:nth-of-type(8) {
-    background: url('/beam-desktop.jpg') center/cover;
-    background-attachment: fixed;
+    background: url('/beam.jpeg') center/cover;
+    background-attachment: scroll;
     position: relative;
-    filter: grayscale(100%);
+    background-position: center center;
   }
   
   .desktop-container section:nth-of-type(8)::after {
@@ -2112,7 +2112,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.75);
     pointer-events: none;
     z-index: 0;
   }
@@ -2128,6 +2128,10 @@
     width: 100vw;
     margin: 0;
     padding: 5rem 0;
+  }
+  
+  .desktop-container section:nth-of-type(10)::after {
+    display: none;
   }
 
   /* Ensure content appears above overlay */
@@ -2371,19 +2375,25 @@
 }
 
 .desktop-newsletter {
-  background: #000;
+  background: #000 !important;
   color: white;
   padding: 5rem 2rem;
   text-align: center;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+  position: relative;
+}
+
+.desktop-newsletter::after {
+  display: none !important;
 }
 
 .desktop-newsletter-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .desktop-newsletter-description {
@@ -2393,6 +2403,7 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .desktop-newsletter-embed {
