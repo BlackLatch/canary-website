@@ -2,7 +2,6 @@
 import styles from './globals.module.css'
 import responsive from './responsive.module.css'
 import { useEffect, useState, useRef } from 'react'
-import Script from 'next/script'
 import { useIsMobile } from './hooks/useIsMobile'
 import MobileVersion from './MobileVersion'
 
@@ -319,24 +318,8 @@ export default function Kontakte2() {
       {/* Newsletter Section */}
       <section id="newsletter" className={styles['desktop-newsletter']}>
         <h2 className={styles['desktop-newsletter-title']}>Stay Updated</h2>
-        <p className={styles['desktop-newsletter-description']}>
-          Get the latest updates on Canary's development.
-        </p>
         <div className={styles['desktop-newsletter-embed']}>
-          <iframe 
-            src="https://canaryapp.substack.com/embed" 
-            width="480" 
-            height="280" 
-            style={{
-              border: '1px solid #EEE', 
-              background: 'white', 
-              borderRadius: '8px',
-              maxWidth: '100%',
-              width: '100%'
-            }} 
-            frameBorder="0" 
-            scrolling="no"
-          />
+          <div data-supascribe-embed-id="86399153858" data-supascribe-subscribe></div>
         </div>
       </section>
     </div>

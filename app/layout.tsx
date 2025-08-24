@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./global.css";
 
 export const metadata: Metadata = {
@@ -16,6 +17,12 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
+        {/* Supascribe Script (Only add this to your site once) */}
+        <Script 
+          src="https://js.supascribe.com/v1/loader/zgn5IbpooVbrPacN4C27D8yOn1S2.js" 
+          strategy="lazyOnload"
+          async
+        />
       </body>
     </html>
   );

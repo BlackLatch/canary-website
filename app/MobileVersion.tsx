@@ -335,24 +335,8 @@ export default function MobileVersion() {
 
       <section id="newsletter" className={styles.mobileNewsletter}>
         <h2 className={styles.mobileNewsletterTitle}>Stay Updated</h2>
-        <p className={styles.mobileNewsletterDescription}>
-          Get the latest updates on Canary's development.
-        </p>
         <div className={styles.mobileSubscribeEmbed}>
-          <iframe 
-            src="https://canaryapp.substack.com/embed" 
-            width="480" 
-            height="150" 
-            style={{
-              border: '1px solid #EEE', 
-              background: 'black', 
-              borderRadius: '8px',
-              maxWidth: '100%',
-              width: '100%'
-            }} 
-            frameBorder="0" 
-            scrolling="no"
-          />
+          <div data-supascribe-embed-id="86399153858" data-supascribe-subscribe></div>
         </div>
       </section>
     </div>

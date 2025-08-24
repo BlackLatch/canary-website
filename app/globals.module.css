@@ -2635,6 +2635,10 @@
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .desktop-newsletter::after {
@@ -2660,5 +2664,9 @@
 
 .desktop-newsletter-embed {
   max-width: 500px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 } 
