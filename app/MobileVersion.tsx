@@ -334,7 +334,7 @@ export default function MobileVersion() {
       </section>
 
       <section id="newsletter" className={styles.mobileNewsletter}>
-        <h2 className={styles.mobileNewsletterTitle}>Stay Updated</h2>
+        <h2 className={styles.mobileNewsletterTitle}>Follow Canary's Development</h2>
         <div className={styles.mobileSubscribeEmbed}>
           <div data-supascribe-embed-id="86399153858" data-supascribe-subscribe></div>
         </div>

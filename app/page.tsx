@@ -317,7 +317,7 @@ export default function Kontakte2() {
 
       {/* Newsletter Section */}
       <section id="newsletter" className={styles['desktop-newsletter']}>
-        <h2 className={styles['desktop-newsletter-title']}>Stay Updated</h2>
+        <h2 className={styles['desktop-newsletter-title']}>Follow Canary's Development</h2>
         <div className={styles['desktop-newsletter-embed']}>
           <div data-supascribe-embed-id="86399153858" data-supascribe-subscribe></div>
         </div>

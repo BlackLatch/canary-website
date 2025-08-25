@@ -2630,26 +2630,31 @@
   background: #000 !important;
   color: white;
   padding: 5rem 2rem;
-  text-align: center;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  text-align: center !important;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 .desktop-newsletter::after {
   display: none !important;
 }
 
+/* Override the general section > * rule that forces text-align: left */
+.desktop-newsletter > * {
+  text-align: center !important;
+}
+
 .desktop-newsletter-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
+  margin: 0 0 1rem 0;
+  text-align: center !important;
+  width: 100%;
 }
 
 .desktop-newsletter-description {
@@ -2669,4 +2674,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Ensure Supascribe embed is centered */
+.desktop-newsletter-embed > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 } 
