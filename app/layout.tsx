@@ -20,8 +20,7 @@ export default function RootLayout({
         {/* Supascribe Script (Only add this to your site once) */}
         <Script 
           src="https://js.supascribe.com/v1/loader/zgn5IbpooVbrPacN4C27D8yOn1S2.js" 
-          strategy="lazyOnload"
-          async
+          strategy="afterInteractive"
         />
       </body>
     </html>
