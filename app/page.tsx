@@ -10,6 +10,9 @@ export default function Kontakte2() {
   const [isClient, setIsClient] = useState(false)
   const [displayedText, setDisplayedText] = useState('')
   const [showCursor, setShowCursor] = useState(true)
+  const [hideNavbar, setHideNavbar] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [navbarBackground, setNavbarBackground] = useState(false)
   const fullText = 'If you go silent Canary speaks for you.'
 
   const scrollToSection = (section: string) => {
@@ -67,6 +70,32 @@ export default function Kontakte2() {
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
+  // Handle navbar hide on scroll down, show on scroll up
+  useEffect(() => {
+    if (isMobile) return // Only for desktop
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Hide navbar when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past threshold
+        setHideNavbar(true)
+      } else {
+        // Scrolling up or at top
+        setHideNavbar(false)
+      }
+      
+      // Add background when scrolled
+      setNavbarBackground(currentScrollY > 50)
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY, isMobile])
+
   if (!isClient) {
     return null
   }
@@ -82,7 +111,17 @@ export default function Kontakte2() {
   return (
     <div className={styles['desktop-container']}>
       {/* Header */}
-      <header className={styles['desktop-header']}>
+      <header 
+        className={styles['desktop-header']}
+        style={{
+          transform: hideNavbar ? 'translateY(-100%)' : 'translateY(0)',
+          transition: 'transform 0.3s ease-in-out, background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, padding 0.3s ease-in-out',
+          backgroundColor: navbarBackground ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+          backdropFilter: navbarBackground ? 'blur(10px)' : 'none',
+          borderBottom: navbarBackground ? '1px solid rgba(0, 0, 0, 0.1)' : 'none',
+          padding: navbarBackground ? '1rem 2rem' : '0.5rem 2rem'
+        }}
+      >
         <div className={styles['desktop-nav']}>
           <img src="/canary-optimized.webp" alt="Canary" className={styles['desktop-logo']} />
           <div className={styles['desktop-nav-links']}>
