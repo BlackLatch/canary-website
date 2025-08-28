@@ -317,7 +317,7 @@ export default function Kontakte2() {
               The name <em>Canary</em> comes from the <em>canary in the coal mine</em> — an early warning system that signaled danger before it was too late. Our project carries that same purpose: to ensure that silence itself becomes a signal, and that critical truths are not lost.
             </p>
             <p>
-              Canary began as a winning hackathon project at the Web3 Privacy Now Hack in Berlin (<a href="#" target="_blank" rel="noopener noreferrer">link</a>) and was later accepted as the first project in the <strong>Cypherpunk Launchpad</strong>, a three-month incubation for early-stage privacy tools.
+              Canary began as a winning hackathon project at the <a href="https://hackathon.web3privacy.info/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textDecorationColor: '#e53e3e', textDecorationThickness: '3px', textUnderlineOffset: '4px', color: 'inherit' }}>Web3 Privacy Now Hack in Berlin</a> and was later accepted as the first project in the <strong>Cypherpunk Launchpad</strong>, a three-month incubation for early-stage privacy tools.
             </p>
           </div>
 

@@ -121,6 +121,109 @@ Used for: Step markers, technical indicators
 - Feature titles on dark: `text-shadow: 4px 4px 8px rgba(0, 0, 0, 1)`
 - Improves legibility on image backgrounds
 
+## Interactive Elements & Animations
+
+### Button Interactions
+Buttons feature smooth transitions with border color changes on hover:
+
+#### Primary CTA Buttons
+```css
+/* Default state */
+border: 1px solid rgb(151, 151, 151);
+transition: all 0.3s ease;
+
+/* Hover state */
+border-color: #fff;
+background-color: rgba(151, 151, 151, 0.1);
+```
+
+#### Feature CTA Buttons
+- Border transitions from gray (#979797) to white on hover
+- Background gains subtle opacity overlay
+- Smooth 0.3s ease transition for all properties
+
+### Card Interactions
+Cards implement red border highlighting with subtle elevation effects:
+
+#### Tech Stack Cards
+```css
+/* Default state */
+border: 1px solid rgba(0, 0, 0, 0.2);
+transition: all 0.3s ease;
+
+/* Hover state */
+border-color: #e53e3e;  /* Accent red */
+transform: translateY(-2px);
+```
+
+#### Sponsor Cards
+- Same border color transition to #e53e3e on hover
+- Subtle upward movement (-2px translateY)
+- Creates visual lift effect
+
+#### Feature Cards (Flow Diagrams)
+```css
+/* Default state */
+border: 2px solid #666666;
+transition: all 0.3s ease;
+
+/* Hover state */
+border-color: #e53e3e;
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+z-index: 10;
+```
+
+### Red Border Animation Details
+The signature red border (#e53e3e) interaction provides visual feedback across multiple components:
+
+#### Animation Properties
+- **Transition Duration**: 0.3s for smooth, responsive feedback
+- **Easing Function**: ease for natural acceleration/deceleration
+- **Border Color**: #e53e3e (primary accent red)
+- **Transform Effects**: 
+  - Cards: translateY(-2px to -5px) for elevation
+  - Some cards: scale(1.05) for emphasis
+  - Links: scale(1.1) for text enlargement
+
+#### Interactive Flow Icons
+```css
+/* Default state */
+border: 2px solid #666666;
+color: #333333;
+
+/* Hover state */
+border-color: #e53e3e;
+color: #e53e3e;
+background-color: rgba(229, 62, 62, 0.1);  /* 10% red tint */
+```
+
+### Link Underline Animations
+Links feature animated underlines using pseudo-elements:
+
+```css
+/* Underline animation */
+::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #e53e3e;
+  transition: width 0.3s ease;
+}
+
+/* Hover state */
+::after {
+  width: 100%;
+}
+```
+
+### Transition Best Practices
+- Use `transition: all 0.3s ease` for multi-property animations
+- Apply `will-change` sparingly for performance optimization
+- Ensure hover states maintain text legibility
+- Test animations at 60fps for smooth motion
+- Keep transform origins consistent (default: center)
+
 ## Typography Components
 
 ### CTA Buttons
