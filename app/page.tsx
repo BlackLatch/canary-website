@@ -172,12 +172,12 @@ export default function Kontakte2() {
         <h2 className={styles['desktop-section-title']}>
           At its core, Canary is a<br />
           <a href="#" target="_blank" rel="noopener noreferrer" className={styles['desktop-dead-mans-switch-link']}>
-            dead man's switch
+            digital safe
           </a>
         </h2>
         <div className={styles['desktop-section-content']}>
           <p>
-            Canary releases your files or messages if you don't check in. You define the schedule and the recipients. If you go silent, the system triggers the release of your data — either privately to trusted contacts or publicly to everyone.
+            Canary releases your files or messages if you don't check in. You define the schedule and the recipients. If you go silent, the system triggers the release of your data either privately to trusted contacts or publicly to everyone.
           </p>
         </div>
       </section>
@@ -189,7 +189,7 @@ export default function Kontakte2() {
           <div className={styles['desktop-step']}>
             <div className={styles['desktop-step-number']}>01</div>
             <div className={styles['desktop-step-content']}>
-              <div className={styles['desktop-step-label']}>Set Check-in Schedule</div>
+              <div className={styles['desktop-step-label']}>Name Your Vault</div>
             </div>
           </div>
           <div className={styles['desktop-step']}>
@@ -201,19 +201,19 @@ export default function Kontakte2() {
           <div className={styles['desktop-step']}>
             <div className={styles['desktop-step-number']}>03</div>
             <div className={styles['desktop-step-content']}>
-              <div className={styles['desktop-step-label']}>Encrypt & Upload Files</div>
+              <div className={styles['desktop-step-label']}>Set Check-in Schedule</div>
             </div>
           </div>
           <div className={styles['desktop-step']}>
             <div className={styles['desktop-step-number']}>04</div>
             <div className={styles['desktop-step-content']}>
-              <div className={styles['desktop-step-label']}>Activate Vault</div>
+              <div className={styles['desktop-step-label']}>Encrypt & Upload Files</div>
             </div>
           </div>
           <div className={styles['desktop-step']}>
             <div className={styles['desktop-step-number']}>05</div>
             <div className={styles['desktop-step-content']}>
-              <div className={styles['desktop-step-label']}>Check In</div>
+              <div className={styles['desktop-step-label']}>Activate Vault</div>
             </div>
           </div>
         </div>

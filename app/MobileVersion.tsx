@@ -164,12 +164,12 @@ export default function MobileVersion() {
         <h2 className={styles.mobileSectionTitle}>
           At its core, Canary is a<br />
           <a href="#" target="_blank" rel="noopener noreferrer" className={styles.deadMansSwitchLink}>
-            dead man's switch
+            digital safe
           </a>
         </h2>
         <div className={styles.mobileSectionContent}>
           <p>
-            Canary releases your files or messages if you don't check in. You define the schedule and the recipients. If you go silent, the system triggers the release of your data — either privately to trusted contacts or publicly to everyone.
+            Canary releases your files or messages if you don't check in. You define the schedule and the recipients. If you go silent, the system triggers the release of your data either privately to trusted contacts or publicly to everyone.
           </p>
         </div>
       </section>
@@ -183,7 +183,7 @@ export default function MobileVersion() {
           <div className={styles.mobileStep}>
             <div className={styles.mobileStepNumber}>01</div>
             <div className={styles.mobileStepContent}>
-              <div className={styles.mobileStepLabel}>Set Check-in Schedule</div>
+              <div className={styles.mobileStepLabel}>Name Your Vault</div>
             </div>
           </div>
           <div className={styles.mobileStep}>
@@ -195,19 +195,19 @@ export default function MobileVersion() {
           <div className={styles.mobileStep}>
             <div className={styles.mobileStepNumber}>03</div>
             <div className={styles.mobileStepContent}>
-              <div className={styles.mobileStepLabel}>Encrypt & Upload Files</div>
+              <div className={styles.mobileStepLabel}>Set Check-in Schedule</div>
             </div>
           </div>
           <div className={styles.mobileStep}>
             <div className={styles.mobileStepNumber}>04</div>
             <div className={styles.mobileStepContent}>
-              <div className={styles.mobileStepLabel}>Activate Vault</div>
+              <div className={styles.mobileStepLabel}>Encrypt & Upload Files</div>
             </div>
           </div>
           <div className={styles.mobileStep}>
             <div className={styles.mobileStepNumber}>05</div>
             <div className={styles.mobileStepContent}>
-              <div className={styles.mobileStepLabel}>Check In</div>
+              <div className={styles.mobileStepLabel}>Activate Vault</div>
             </div>
           </div>
         </div>
