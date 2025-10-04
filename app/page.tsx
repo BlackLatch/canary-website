@@ -13,7 +13,9 @@ export default function Kontakte2() {
   const [hideNavbar, setHideNavbar] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [navbarBackground, setNavbarBackground] = useState(false)
+  const [scrambleText, setScrambleText] = useState('digital safe')
   const fullText = 'If you go silent Canary speaks for you.'
+  const scramblePhrases = ['digital safe', "dead man's switch", 'digital failsafe', 'backup plan']
 
   const scrollToSection = (section: string) => {
     const element = document.getElementById(section);
@@ -76,7 +78,7 @@ export default function Kontakte2() {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      
+
       // Hide navbar when scrolling down, show when scrolling up
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         // Scrolling down & past threshold
@@ -85,16 +87,53 @@ export default function Kontakte2() {
         // Scrolling up or at top
         setHideNavbar(false)
       }
-      
+
       // Add background when scrolled
       setNavbarBackground(currentScrollY > 50)
-      
+
       setLastScrollY(currentScrollY)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY, isMobile])
+
+  // Scramble text animation
+  useEffect(() => {
+    if (isMobile) return
+
+    let currentPhraseIndex = 0
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz !?\''
+
+    const scramble = (target: string) => {
+      let iterations = 0
+      const interval = setInterval(() => {
+        setScrambleText((prev) =>
+          target.split('').map((char, index) => {
+            if (index < iterations) {
+              return target[index]
+            }
+            return chars[Math.floor(Math.random() * chars.length)]
+          }).join('')
+        )
+
+        if (iterations >= target.length) {
+          clearInterval(interval)
+        }
+
+        iterations += 1 / 3
+      }, 30)
+    }
+
+    const cyclePhrases = () => {
+      currentPhraseIndex = (currentPhraseIndex + 1) % scramblePhrases.length
+      scramble(scramblePhrases[currentPhraseIndex])
+    }
+
+    const phraseInterval = setInterval(cyclePhrases, 3000)
+
+    return () => clearInterval(phraseInterval)
+  }, [isMobile])
 
   if (!isClient) {
     return null
@@ -172,7 +211,7 @@ export default function Kontakte2() {
         <h2 className={styles['desktop-section-title']}>
           At its core, Canary is a<br />
           <a href="#" target="_blank" rel="noopener noreferrer" className={styles['desktop-dead-mans-switch-link']}>
-            digital safe
+            {scrambleText}
           </a>
         </h2>
         <div className={styles['desktop-section-content']}>
@@ -189,7 +228,7 @@ export default function Kontakte2() {
           <div className={styles['desktop-step']}>
             <div className={styles['desktop-step-number']}>01</div>
             <div className={styles['desktop-step-content']}>
-              <div className={styles['desktop-step-label']}>Name Your Vault</div>
+              <div className={styles['desktop-step-label']}>Name Your Dossier</div>
             </div>
           </div>
           <div className={styles['desktop-step']}>
@@ -213,7 +252,7 @@ export default function Kontakte2() {
           <div className={styles['desktop-step']}>
             <div className={styles['desktop-step-number']}>05</div>
             <div className={styles['desktop-step-content']}>
-              <div className={styles['desktop-step-label']}>Activate Vault</div>
+              <div className={styles['desktop-step-label']}>Activate Dossier</div>
             </div>
           </div>
         </div>

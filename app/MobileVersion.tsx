@@ -183,7 +183,7 @@ export default function MobileVersion() {
           <div className={styles.mobileStep}>
             <div className={styles.mobileStepNumber}>01</div>
             <div className={styles.mobileStepContent}>
-              <div className={styles.mobileStepLabel}>Name Your Vault</div>
+              <div className={styles.mobileStepLabel}>Name Your Dossier</div>
             </div>
           </div>
           <div className={styles.mobileStep}>
@@ -207,7 +207,7 @@ export default function MobileVersion() {
           <div className={styles.mobileStep}>
             <div className={styles.mobileStepNumber}>05</div>
             <div className={styles.mobileStepContent}>
-              <div className={styles.mobileStepLabel}>Activate Vault</div>
+              <div className={styles.mobileStepLabel}>Activate Dossier</div>
             </div>
           </div>
         </div>
