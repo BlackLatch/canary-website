@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "Canary is a trusted, secure space for journalists, activists, and everyday citizens to automatically release critical information if they're unable to speak for themselves.",
   viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
   metadataBase: new URL('https://canaryapp.io'),
+  icons: {
+    icon: '/canary2.png',
+  },
   openGraph: {
     title: "Canary - Digital Failsafe for Critical Information",
     description: "Canary releases your files or messages if you don't check in. You define the schedule and the recipients.",
